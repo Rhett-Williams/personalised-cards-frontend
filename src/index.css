@@ -1,0 +1,43 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+@font-face {
+  font-family: "Roboto";   /*Can be any text*/
+  src: local("Roboto-Regular"),
+    url("./fonts/Roboto-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Sarah";   /*Can be any text*/
+  src: local("Sarah-Script-Font"),
+    url("./fonts/Sarah-Script-Font.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Charlie";   /*Can be any text*/
+  src: local("Charlie"),
+    url("./fonts/Charlie.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Lauren";   /*Can be any text*/
+  src: local("Lauren-Regular"),
+    url("./fonts/Lauren-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Alexander";   /*Can be any text*/
+  src: local("Alexander-Regular"),
+    url("./fonts/Alexander-Regular.ttf") format("truetype");
+}
