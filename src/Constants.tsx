@@ -1,1 +1,1 @@
-export const apiUrl = 'http://localhost:3001/'
+export const apiUrl = 'https://stunningly-enormous-horse-artifact-dev.wayscript.cloud/'
