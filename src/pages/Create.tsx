@@ -1,20 +1,22 @@
 import React, { useState } from "react";
 import Cover from "../components/CreateComponents/Cover";
 import Inner from "../components/CreateComponents/Inner";
-import Address from "../components/CreateComponents/Address";
 import axios from "axios";
 import { apiUrl } from "../Constants";
 import { ThreeDots } from "react-loader-spinner";
 
 const Create: React.FC = () => {
   const [currentStage, setCurrentStage] = useState<
-    "Cover" | "Inner" | "Address"
+    "Cover" | "Inner" 
   >("Cover");
   const [coverPrompt, setCoverPrompt] = useState("");
   const [coverImage, setConverImage] = useState("");
   const [innerPrompt, setInnerPrompt] = useState("");
   const [innerImage, setInnerImage] = useState("");
   const [innerText, setInnerText] = useState("");
+  const [coverColour, setCoverColour] = useState('#ffffff')
+  const [font, setFont] = useState('Roboto')
+  const [fontColor, setFontColor] = useState('#000000')
   const [isSurpriseMeLoading, setIsSurpriseMeLoading] = useState(false);
   const [isGenerateImageLoading, setIsGenerateImageLoading] = useState(false);
   const [isPoemSurpriseMeLoading, setIsPoemSurpriseMeLoading] = useState(false);
@@ -26,6 +28,7 @@ const Create: React.FC = () => {
       case "Cover":
         return (
           <Cover
+            onLoad={() => setIsGenerateImageLoading(false)}
             onNextPress={() => setCurrentStage('Inner')}
             onGenerate={onGenerate}
             handleSurpriseMe={onSurpriseMe}
@@ -34,12 +37,15 @@ const Create: React.FC = () => {
             prompt={coverPrompt}
             setPrompt={setCoverPrompt}
             coverImage={coverImage}
+            coverColor={coverColour}
+            setCoverColor={setCoverColour}
           />
         );
       case "Inner":
         return (
           <Inner
-            onNextPress={() => setCurrentStage('Address')}
+            onLoad={() => setIsGenerateImageLoading(false)}
+            onBackPress={() => setCurrentStage('Cover')}
             onGenerate={onGenerate}
             handleSurpriseMe={onSurpriseMe}
             isSurpriseMeLoading={isSurpriseMeLoading}
@@ -53,22 +59,39 @@ const Create: React.FC = () => {
             isPoemSurpriseMeLoading={isPoemSurpriseMeLoading}
             isGeneratingPoem={isGeneratePoemLoading}
             handleGeneratePoem={onGeneratePoem}
+            font={font}
+            fontColor={fontColor}
+            setFont={setFont}
+            setFontColor={setFontColor}
           />
         );
-      case "Address":
-        return <Address />;
     }
   };
 
   const handlePurchase = async () => {
+    setIsPurchaseLoading(true)
     try {
-        const response = await axios.post(`${apiUrl}createPaymentLink`, {});
+        const payload = {
+          coverImage,
+          innerImage,
+          innerText,
+          coverColour,
+          font,
+          fontColor
+        }
+        const hasEmptyValue = Object.values(payload).some(value => value === '');
+        if (hasEmptyValue){
+          alert("Please fill out all fields")
+          setIsPurchaseLoading(false)
+          return
+        }
+        const response = await axios.get(`${apiUrl}createPaymentLink`);
         window.open(response.data.paymentLink)
-        console.log(response.data.paymentLink)
+        localStorage.setItem("cardPayload", JSON.stringify(payload))
     } catch (error) {
         console.log("error", error)
     }
-
+    setIsPurchaseLoading(false)
   }
 
   const onGenerate = async () => {
@@ -92,7 +115,6 @@ const Create: React.FC = () => {
     } catch (error) {
       console.error("Error fetching image prompt:", error);
     }
-    setIsGenerateImageLoading(false)
   };
 
   const onSurpriseMe = async () => {
@@ -180,19 +202,9 @@ const Create: React.FC = () => {
         >
           Inner
         </div>
-        <div
-          className={
-            currentStage === "Address"
-              ? "create-button-selected"
-              : "create-button"
-          }
-          onClick={() => setCurrentStage("Address")}
-        >
-          Address
-        </div>
       </div>
       {renderStage()}
-      {currentStage === 'Address' && <button
+      <button
         className="generate-button"
         style={{ width: "70%", marginTop: "50px", marginBottom: "50px" }}
         onClick={handlePurchase}
@@ -218,7 +230,7 @@ const Create: React.FC = () => {
             ) : (
               "Purchase your card!"
             )}
-      </button>}
+      </button>
     </div>
   );
 };

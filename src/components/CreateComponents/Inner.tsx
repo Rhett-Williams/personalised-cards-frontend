@@ -23,7 +23,12 @@ type Props = {
   isGenerateImageLoading: boolean;
   isPoemSurpriseMeLoading: boolean;
   isGeneratingPoem: boolean;
-  onNextPress: () => void
+  onBackPress: () => void
+  font: string
+  fontColor: string
+  setFont: (font: string) => void
+  setFontColor: (fontColor: string) => void
+  onLoad: () => void
 };
 
 const Inner: React.FC<Props> = ({
@@ -40,7 +45,12 @@ const Inner: React.FC<Props> = ({
   isGenerateImageLoading,
   isPoemSurpriseMeLoading,
   isGeneratingPoem,
-  onNextPress
+  onBackPress,
+  font,
+  fontColor,
+  setFont,
+  setFontColor,
+  onLoad
 }) => {
   const [isVisible, setIsVisible] = useState(false);
   const [option, setOption] = useState<{
@@ -54,8 +64,6 @@ const Inner: React.FC<Props> = ({
     theme: string;
   }>({ gender: "", event: "", theme: "" });
   const [age, setAge] = useState<string>("");
-  const [color, setColor] = useState("#aabbcc");
-  const [font, setFont] = useState("Roboto");
 
   useEffect(() => {
     setIsVisible(true);
@@ -111,7 +119,7 @@ const Inner: React.FC<Props> = ({
     >
       <div className="inner-side-options">
       <div style={{paddingLeft: 10}}>
-        <div style={{paddingLeft: 10}}>Font:</div>
+        <div style={{paddingLeft: 10, fontWeight: 'bold', marginBottom: '15px'}}>Font:</div>
         <ReactDropdown
           className="dropdown"
           arrowClassName="dropdown-option"
@@ -120,20 +128,21 @@ const Inner: React.FC<Props> = ({
           value={font}
           placeholder="Select an option"
         />
-        <div>Font colour:</div>
+        <div style={{fontWeight: 'bold', marginBottom: '15px'}}>Font colour:</div>
         <HexColorPicker
           style={{ width: "100px", height: "100px" }}
-          color={color}
-          onChange={setColor}
+          color={fontColor}
+          onChange={setFontColor}
         />
-        <div>{color}</div>
+        <div>{fontColor}</div>
         </div>
       </div>
       <PictureOverlayInner
+        onLoad={onLoad}
         image={innerImage}
         text={innerText}
         font={font}
-        fontColor={color}
+        fontColor={fontColor}
         onChange={setInnerText}
       />
       <div className="inner-form-container">
@@ -163,6 +172,7 @@ const Inner: React.FC<Props> = ({
             value={innerImagePrompt}
             onChange={(e) => setInnerImagePrompt(e.target.value)}
           />
+          <div style={{fontSize: 12, marginTop: 10}}><div style={{fontWeight: 'bold'}}>Hint:</div> For the best results, trying being specific with the resolution or adding an art style. E.g: Pixar 3D render, 4k</div>
           <button className="generate-button" onClick={onGenerate}>
             {isGenerateImageLoading ? (
               <div
@@ -298,9 +308,9 @@ const Inner: React.FC<Props> = ({
       <div
           className="create-button"
           style={{marginTop: '20px'}}
-          onClick={onNextPress}
+          onClick={onBackPress}
         >
-          {'Next >>'}
+          {'<< Back'}
         </div>
     </div>
   );

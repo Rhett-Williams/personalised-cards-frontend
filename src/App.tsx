@@ -10,9 +10,10 @@ import './fonts/Charlie.ttf'
 import './fonts/Lauren-Regular.ttf'
 import './fonts/Alexander-Regular.ttf'
 import './App.css'
+import Footer from './components/Footer';
+
 
 const App: React.FC = () => {
-  const isAuthenticated = false; // Replace with your authentication logic
 
   return (
       <Router>
@@ -20,12 +21,9 @@ const App: React.FC = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/create" element={<Create />} />
-          {isAuthenticated ? (
-            <Route path="/payment-complete" element={<PaymentComplete />} />
-          ) : (
-            <Route path="*" element={<Navigate to="/" />} />
-          )}
+          <Route path="/payment-complete/:id" element={<PaymentComplete />} />
         </Routes>
+        <Footer/>
       </Router>
   );
 };

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import PictureOverlay from "../PictureOverlayCover";
 import { ThreeDots } from "react-loader-spinner";
+import { HexColorPicker } from "react-colorful";
 
 type Props = {
   prompt: string;
@@ -11,6 +12,9 @@ type Props = {
   isSurpriseMeLoading: boolean;
   isGenerateImageLoading: boolean
   onNextPress: () => void
+  coverColor: string
+  setCoverColor: (colour: string) => void
+  onLoad: () => void
 };
 
 const Cover: React.FC<Props> = ({
@@ -21,7 +25,10 @@ const Cover: React.FC<Props> = ({
   handleSurpriseMe,
   isSurpriseMeLoading,
   isGenerateImageLoading,
-  onNextPress
+  onNextPress,
+  coverColor,
+  setCoverColor,
+  onLoad
 }) => {
   const [isVisible, setIsVisible] = useState(false);
 
@@ -38,7 +45,18 @@ const Cover: React.FC<Props> = ({
       style={{marginBottom: 70}}
       onAnimationEnd={() => setIsVisible(false)}
     >
-      <PictureOverlay image={coverImage} />
+      <div className="cover-side-options">
+      <div style={{paddingLeft: 10}}>
+        <div style={{fontWeight: 'bold', marginBottom: '15px'}}>Page colour:</div>
+        <HexColorPicker
+          style={{ width: "100px", height: "100px" }}
+          color={coverColor}
+          onChange={setCoverColor}
+        />
+        <div>{coverColor}</div>
+        </div>
+      </div>
+      <PictureOverlay image={coverImage} backgroundColor={coverColor} onLoad={onLoad}/>
       <div className="cover-form-container">
         <div className="cover-form-prompt">
           <span>Image prompt:</span>
@@ -65,6 +83,7 @@ const Cover: React.FC<Props> = ({
           value={prompt}
           onChange={(e) => setPrompt(e.target.value)}
         />
+        <div style={{fontSize: 12, marginTop: 10}}><div style={{fontWeight: 'bold'}}>Hint:</div> For the best results, trying being specific with the resolution or adding an art style. E.g: Pixar 3D render, 4k</div>
         <button className="generate-button" onClick={onGenerate}>
           {isGenerateImageLoading ? (
             <div style={{display: "flex", flexDirection: 'row', justifyContent: 'center'}}>

@@ -7,13 +7,15 @@ type Props = {
   onChange: (value: string) => void;
   font: string;
   fontColor: string
+  onLoad: () => void
 };
 
-const PictureOverlayInner = ({ image, text, onChange, font, fontColor }: Props) => {
+const PictureOverlayInner = ({ image, text, onChange, font, fontColor, onLoad }: Props) => {
   return (
     <div className="picture-overlay-inner">
       <div className="inner-container">
         <img
+          onLoad={onLoad}
           src={image !== "" ? image : defaultImage}
           alt="Overlay Image"
           className="inner-image"
