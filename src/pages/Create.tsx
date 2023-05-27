@@ -169,14 +169,7 @@ const Create: React.FC = () => {
 
   return (
     <div
-      style={{
-        display: "flex",
-        justifyContent: "center",
-        width: "70%",
-        flexDirection: "column",
-        alignItems: "center",
-        margin: "0 auto",
-      }}
+      className="main-create-container"
     >
       <div
         style={{

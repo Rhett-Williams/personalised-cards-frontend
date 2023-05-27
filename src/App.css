@@ -83,6 +83,21 @@ img[src=""] {
   cursor: pointer;
 }
 
+.main-create-container {
+  display: flex;
+  justify-content: center;
+  width: 70%;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 700px) {
+  .main-create-container {
+    width: 100%;
+  }
+}
+
 .create-button {
   font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   font-size: 30px;
@@ -100,6 +115,7 @@ img[src=""] {
   transform: translateX(-50px);
   transition: opacity 0.5s ease-out, transform 0.5s ease-out;
   width: 70%;
+  min-width: 500px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -220,6 +236,7 @@ img[src=""] {
 
 .inner-image {
   width: 50%;
+  min-width: 150px;
   height: 50%;
   margin-right: 10px;
 }
@@ -228,6 +245,7 @@ img[src=""] {
   /* flex-grow: 1; */
   padding: 10px;
   width: 150%;
+  min-width: 150px;
   height: 25vw;
   min-height: 150px;
   border: 0px solid #ccc;
