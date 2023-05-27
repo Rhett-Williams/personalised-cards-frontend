@@ -150,6 +150,7 @@ const Inner: React.FC<Props> = ({
           <div className="cover-form-prompt">
             <span>Image prompt:</span>
             <button
+              disabled={isSurpriseMeLoading}
               className="cover-form-surprise-button"
               onClick={handleSurpriseMe}
             >
@@ -173,7 +174,7 @@ const Inner: React.FC<Props> = ({
             onChange={(e) => setInnerImagePrompt(e.target.value)}
           />
           <div style={{fontSize: 12, marginTop: 10}}><div style={{fontWeight: 'bold'}}>Hint:</div> For the best results, trying being specific with the resolution or adding an art style. E.g: Pixar 3D render, 4k</div>
-          <button className="generate-button" onClick={onGenerate}>
+          <button className="generate-button" onClick={onGenerate} disabled={isGenerateImageLoading}>
             {isGenerateImageLoading ? (
               <div
                 style={{
@@ -201,6 +202,7 @@ const Inner: React.FC<Props> = ({
           <div className="cover-form-prompt" style={{ marginBottom: "10px" }}>
             <span>Poem prompt:</span>
             <button
+              disabled={isPoemSurpriseMeLoading}
               className="cover-form-surprise-button"
               onClick={handlePoemSurpriseMe}
             >
@@ -280,7 +282,7 @@ const Inner: React.FC<Props> = ({
               onChange={(e) => setInputs({ ...option, theme: e.target.value })}
             />
           )}
-          <button className="generate-button" onClick={validateForm}>
+          <button className="generate-button" onClick={validateForm} disabled={isGeneratingPoem}>
             {isGeneratingPoem ? (
               <div
                 style={{

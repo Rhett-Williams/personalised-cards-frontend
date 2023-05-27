@@ -61,6 +61,7 @@ const Cover: React.FC<Props> = ({
         <div className="cover-form-prompt">
           <span>Image prompt:</span>
           <button
+            disabled={isSurpriseMeLoading}
             className="cover-form-surprise-button"
             onClick={handleSurpriseMe}
           >
@@ -84,7 +85,7 @@ const Cover: React.FC<Props> = ({
           onChange={(e) => setPrompt(e.target.value)}
         />
         <div style={{fontSize: 12, marginTop: 10}}><div style={{fontWeight: 'bold'}}>Hint:</div> For the best results, trying being specific with the resolution or adding an art style. E.g: Pixar 3D render, 4k</div>
-        <button className="generate-button" onClick={onGenerate}>
+        <button className="generate-button" onClick={onGenerate} disabled={isGenerateImageLoading}>
           {isGenerateImageLoading ? (
             <div style={{display: "flex", flexDirection: 'row', justifyContent: 'center'}}>
               <div style={{marginRight: '10px'}}>Generating</div>

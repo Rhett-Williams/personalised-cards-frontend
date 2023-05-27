@@ -14,13 +14,18 @@ const PictureOverlayInner = ({ image, text, onChange, font, fontColor, onLoad }:
   return (
     <div className="picture-overlay-inner">
       <div className="inner-container">
-        <img
+        {image !== "" ? <img
           onLoad={onLoad}
-          src={image !== "" ? image : defaultImage}
+          src={image}
           alt="Overlay Image"
           className="inner-image"
-          style={{ opacity: image !== "" ? 1 : 0.6 }}
-        />
+        /> :
+        <img
+          src={defaultImage}
+          alt="Overlay Image"
+          className="inner-image"
+          style={{opacity: 0.6}}
+        />}
         <div
           style={{
             height: "30vw",

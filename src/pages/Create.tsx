@@ -205,6 +205,7 @@ const Create: React.FC = () => {
       </div>
       {renderStage()}
       <button
+        disabled={isPurchaseLoading}
         className="generate-button"
         style={{ width: "70%", marginTop: "50px", marginBottom: "50px" }}
         onClick={handlePurchase}

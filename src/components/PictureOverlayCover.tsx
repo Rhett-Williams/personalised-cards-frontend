@@ -10,7 +10,8 @@ type Props = {
 const PictureOverlayCover: React.FC<Props> = ({image, backgroundColor, onLoad}) => {
   return (
     <div className="background-div" style={{backgroundColor}}>
-         <img src={image !== '' ? image : defaultImage} onLoad={onLoad} alt="Overlay Image" className="overlay-image" style={{opacity: image !== '' ? 1 : 0.6}}/>
+         {image !== '' ? <img src={image} onLoad={onLoad} alt="Overlay Image" className="overlay-image" /> :
+         <img src={defaultImage} alt="Overlay Image" className="overlay-image" style={{opacity: 0.6}}/>}
     </div>
   );
 };
