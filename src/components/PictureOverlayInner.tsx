@@ -13,19 +13,13 @@ type Props = {
 const PictureOverlayInner = ({ image, text, onChange, font, fontColor, onLoad }: Props) => {
   return (
     <div className="picture-overlay-inner">
-      <div className="inner-container">
-        {image !== "" ? <img
+      <div className="inner-container" style={{ width: '46vw'}}>
+        <img
           onLoad={onLoad}
           src={image}
-          alt="Overlay Image"
           className="inner-image"
-        /> :
-        <img
-          src={defaultImage}
-          alt="Overlay Image"
-          className="inner-image"
-          style={{opacity: 0.6}}
-        />}
+        />
+        {image === '' && <img src={defaultImage} alt="Overlay Image" className="inner-image" style={{opacity: 0.6}}/>}
         <div
           style={{
             height: "30vw",
@@ -37,11 +31,12 @@ const PictureOverlayInner = ({ image, text, onChange, font, fontColor, onLoad }:
         <textarea
           placeholder="Write a poem or message here or generate one based on the filters below. Or click surprise me for a completely random poem."
           className="inner-text-input"
-          style={{fontFamily: font, fontSize: '30px', color: fontColor}}
+          style={{fontFamily: font, fontSize: '30px', color: fontColor, width: '50%'}}
           value={text}
           onChange={(e) => onChange(e.target.value)}
         />
       </div>
+      
     </div>
   );
 };

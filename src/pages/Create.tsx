@@ -100,6 +100,10 @@ const Create: React.FC = () => {
         case 'Cover': prompt = coverPrompt; break
         case 'Inner': prompt = innerPrompt; break
     }
+    if (prompt === ''){
+      alert("Please provide a prompt")
+      return
+    }
     setIsGenerateImageLoading(true)
     try {
       const response = await axios.post(`${apiUrl}generate-image`, {prompt});
@@ -114,6 +118,8 @@ const Create: React.FC = () => {
       }
     } catch (error) {
       console.error("Error fetching image prompt:", error);
+      alert("Error getting image.")
+      setIsGenerateImageLoading(false)
     }
   };
 
