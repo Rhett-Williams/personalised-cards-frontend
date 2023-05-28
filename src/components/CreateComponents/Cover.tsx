@@ -45,18 +45,18 @@ const Cover: React.FC<Props> = ({
       style={{marginBottom: 70}}
       onAnimationEnd={() => setIsVisible(false)}
     >
+
+      <PictureOverlay image={coverImage} backgroundColor={coverColor} onLoad={onLoad}/>
       <div className="cover-side-options">
-      <div style={{paddingLeft: 10}}>
         <div style={{fontWeight: 'bold', marginBottom: '15px'}}>Page colour:</div>
+        <section className="color-picker">
         <HexColorPicker
-          style={{ width: "100px", height: "100px" }}
           color={coverColor}
           onChange={setCoverColor}
         />
+        </section>
         <div>{coverColor}</div>
-        </div>
       </div>
-      <PictureOverlay image={coverImage} backgroundColor={coverColor} onLoad={onLoad}/>
       <div className="cover-form-container">
         <div className="cover-form-prompt">
           <span>Image prompt:</span>

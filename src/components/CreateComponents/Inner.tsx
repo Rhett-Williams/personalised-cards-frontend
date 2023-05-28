@@ -117,8 +117,15 @@ const Inner: React.FC<Props> = ({
       style={{marginBottom: 70}}
       onAnimationEnd={() => setIsVisible(false)}
     >
+      <PictureOverlayInner
+        onLoad={onLoad}
+        image={innerImage}
+        text={innerText}
+        font={font}
+        fontColor={fontColor}
+        onChange={setInnerText}
+      />
       <div className="inner-side-options">
-      <div style={{paddingLeft: 10}}>
         <div style={{paddingLeft: 10, fontWeight: 'bold', marginBottom: '15px'}}>Font:</div>
         <ReactDropdown
           className="dropdown"
@@ -135,16 +142,7 @@ const Inner: React.FC<Props> = ({
           onChange={setFontColor}
         />
         <div>{fontColor}</div>
-        </div>
       </div>
-      <PictureOverlayInner
-        onLoad={onLoad}
-        image={innerImage}
-        text={innerText}
-        font={font}
-        fontColor={fontColor}
-        onChange={setInnerText}
-      />
       <div className="inner-form-container">
         <div className="inner-form-sub-container">
           <div className="cover-form-prompt">

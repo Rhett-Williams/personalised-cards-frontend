@@ -172,14 +172,7 @@ const Create: React.FC = () => {
       className="main-create-container"
     >
       <div
-        style={{
-          display: "flex",
-          width: "30%",
-          minWidth: "400px",
-          justifyContent: "space-between",
-          marginBottom: "20px",
-          marginTop: "30px",
-        }}
+        className="create-page-headers"
       >
         <div
           className={
