@@ -1,1 +1,1 @@
-export const apiUrl = 'https://stunningly-enormous-horse-artifact.wayscript.cloud/'
+export const apiUrl = 'https://personalised-cards.onrender.com/generate-image-prompt'
