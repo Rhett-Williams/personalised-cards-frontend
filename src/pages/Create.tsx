@@ -172,7 +172,7 @@ const Create: React.FC = () => {
     <div
       className="main-create-container"
     >
-      <div style={{position: 'absolute', left: 0, width: '100%'}}>
+      <div style={{position: 'absolute', left: 0, width: '100%', overflow: 'hidden'}}>
       <img style={{ objectFit:'revert'}} src={Side}/>
       </div>
 
