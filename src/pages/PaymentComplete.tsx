@@ -1,11 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { apiUrl } from "../Constants";
 import axios from "axios";
-import { useNavigation, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import Error from "../components/PaymentCompleteComponents/Error";
 import OrderOnTheWay from "../components/PaymentCompleteComponents/OrderOnTheWay";
-import { ThreeDots } from "react-loader-spinner";
-import { InfinitySpin } from "react-loader-spinner";
 import { BallTriangle } from "react-loader-spinner";
 
 const PaymentComplete: React.FC = () => {

@@ -221,7 +221,7 @@ const Create: React.FC = () => {
               >
                 <div style={{ marginRight: "10px" }}>Purchase your card!</div>
                 <ThreeDots
-                  height="15"
+                  height="25"
                   width="15"
                   radius="9"
                   color="orange"
