@@ -4,10 +4,21 @@ import homePageImage1 from '../assets/homePageImage1.png'
 import OpenAiLogo from '../assets/OpenAI_Logo.svg.png'
 import Dalle2Logo from '../assets/download.jpg'
 import { Link } from 'react-router-dom';
+import { Carousel } from 'react-responsive-carousel';
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import inspo1 from '../assets/Inspo1.png'
+import inspo2 from '../assets/Inspo2.png'
+import inspo3 from '../assets/Inspo3.png'
+import inspo4 from '../assets/Inspo4.png'
+import Side from '../assets/this.png'
 
 const Home: React.FC = () => {
   return (
-    <div style={{alignItems: 'center', width: '100%', display: 'flex', flexDirection: 'column'}}>
+    <div style={{alignItems: 'center', width: '100%', display: 'flex', flexDirection: 'column',}}>
+      <div style={{position: 'absolute', left: 0, width: '100%', overflow: 'hidden', top: '120%', zIndex: -10}}>
+        <img style={{ objectFit:'revert'}} src={Side}/>
+      </div>
+      <img className="side-image-removing" style={{top: '120%'}} src={Side}/>
       <img src={backgroundImage} style={{width: '100%'}}/>
       <div className='home-welcome-container'>
         <div className='home-welcome-header'>Welcome!</div>
@@ -36,12 +47,39 @@ const Home: React.FC = () => {
               </ul>
           </div>
         </div>
+        
       </div>
+      
+      <div style={{width: '90%', display: 'flex', flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center'}}>
+
+        <div style={{fontSize: 90, marginRight: 50, fontFamily: 'Alexander'}}>Inspiration:</div>
+      <Carousel className='home-carousel'>
+                <div>
+                    <img src={inspo1} />
+                    <p className="legend">Luminous jellyfish dance under a moonlit ocean sky.</p>
+                </div>
+                <div>
+                    <img src={inspo2} />
+                    <p className="legend">An underwater adventure with a friendly sea creature, pixel art, 4k</p>
+                </div>
+                <div>
+                    <img src={inspo3} />
+                    <p className="legend">pixar 3d render of A treehouse with a secret entrance hidden in the trunk of a large tree.</p>
+                </div>
+                <div>
+                    <img src={inspo4} />
+                    <p className="legend">A robot and a dinosaur having a tea party in a futuristic city. vibrant colours, 4k</p>
+                </div>
+            </Carousel>
+            
+      </div>
+      
       <div className='powered-by-container'>
         <div style={{width: '30%', fontSize: '50px', fontFamily: 'Roboto', fontWeight: 700, marginBottom: 10}}>Powered by:</div>
         <img style={{width: '30%', minWidth: '200px', objectFit: 'contain', marginBottom: 10}} src={OpenAiLogo}/>
         <img style={{width: '30%', objectFit: 'contain', minWidth: '200px'}} src={Dalle2Logo}/>
       </div>
+      
     </div>
   );
 };

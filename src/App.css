@@ -420,6 +420,10 @@ img[src=""] {
   margin: 0 auto;
 }
 
+.home-carousel {
+  width: 400px
+}
+
 @media(max-width: 1450px) {
   .home-welcome-header {
     font-size: 70px;
@@ -524,5 +528,8 @@ img[src=""] {
   }
   .side-image-removing {
     display: none;
+  }
+  .home-carousel {
+    width: 200px
   }
 }
