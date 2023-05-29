@@ -15,10 +15,8 @@ const PaymentComplete: React.FC = () => {
 
   const validatePayment = async (routeId?: string) => {
     try {
-      const cardDetails = JSON.parse(localStorage.getItem("cardPayload")!);
       const response = await axios.post(`${apiUrl}validatePayment`, {
-        paymentLinkId: routeId,
-        ...cardDetails
+        paymentLinkId: routeId
       });
       if (!response.data.isValidPayment) throw Error;
       setIsError(false)
