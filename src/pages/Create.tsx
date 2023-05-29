@@ -87,9 +87,8 @@ const Create: React.FC = () => {
           setIsPurchaseLoading(false)
           return
         }
-        const response = await axios.get(`${apiUrl}createPaymentLink`);
+        const response = await axios.post(`${apiUrl}createPaymentLink`, payload);
         window.open(response.data.paymentLink)
-        localStorage.setItem("cardPayload", JSON.stringify(payload))
     } catch (error) {
         console.log("error", error)
     }
