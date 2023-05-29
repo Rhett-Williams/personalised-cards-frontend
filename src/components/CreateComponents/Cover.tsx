@@ -90,7 +90,7 @@ const Cover: React.FC<Props> = ({
             <div style={{display: "flex", flexDirection: 'row', justifyContent: 'center'}}>
               <div style={{marginRight: '10px'}}>Generating</div>
               <ThreeDots
-                height="15"
+                height="25"
                 width="15"
                 radius="9"
                 color="orange"
