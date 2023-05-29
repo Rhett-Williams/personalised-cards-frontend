@@ -246,6 +246,7 @@ img[src=""] {
   display: flex;
   align-items: center;
   margin-top: 20px;
+  background-color: white;
 }
 
 .cover-form-prompt span {
@@ -274,6 +275,16 @@ img[src=""] {
   border: 1px solid #ccc;
   border-radius: 4px;
   margin-top: 10px;
+}
+
+.powered-by-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  /* height: 200px; */
+  width: 50%;
+  padding: 40px 0px 40px 0px;
+  justify-content: space-between;
 }
 
 .generate-button {
@@ -335,6 +346,11 @@ img[src=""] {
   padding: 5px 0px 5px 0px;
   text-align: center;
   margin-bottom: 10px;
+  background-color: white;
+}
+
+.poem-dropdown-description {
+  background-color: white;
 }
 
 .Dropdown-menu .Dropdown-option{
@@ -391,6 +407,13 @@ img[src=""] {
   color: white;
   padding: 20px;
   text-align: center;
+  border-top: #ff913a solid 3px;
+}
+
+.side-image-removing {
+  position: absolute;
+  right: 0;
+  transform: scaleX(-1);
 }
 
 .footer-content {
@@ -495,5 +518,8 @@ img[src=""] {
     right: 0px;
     padding-left: 20px;
     border-radius: 0px 0px 0px 20px;
+  }
+  .side-image-removing {
+    display: none;
   }
 }

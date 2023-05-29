@@ -48,7 +48,7 @@ const Cover: React.FC<Props> = ({
 
       <PictureOverlay image={coverImage} backgroundColor={coverColor} onLoad={onLoad}/>
       <div className="cover-side-options">
-        <div style={{fontWeight: 'bold', marginBottom: '15px'}}>Page colour:</div>
+        <div style={{fontWeight: 'bold', marginBottom: '15px', backgroundColor: 'white'}}>Page colour:</div>
         <section className="color-picker">
         <HexColorPicker
           color={coverColor}
@@ -59,7 +59,7 @@ const Cover: React.FC<Props> = ({
       </div>
       <div className="cover-form-container">
         <div className="cover-form-prompt">
-          <span>Image prompt:</span>
+          <span >Image prompt:</span>
           <button
             disabled={isSurpriseMeLoading}
             className="cover-form-surprise-button"
@@ -84,7 +84,7 @@ const Cover: React.FC<Props> = ({
           value={prompt}
           onChange={(e) => setPrompt(e.target.value)}
         />
-        <div style={{fontSize: 12, marginTop: 10}}><div style={{fontWeight: 'bold'}}>Hint:</div> For the best results, trying being specific with the resolution or adding an art style. E.g: Pixar 3D render, 4k</div>
+        <div style={{fontSize: 12, marginTop: 10, backgroundColor: 'white'}}><div style={{fontWeight: 'bold'}}>Hint:</div> For the best results, trying being specific with the resolution or adding an art style. E.g: Pixar 3D render, 4k</div>
         <button className="generate-button" onClick={onGenerate} disabled={isGenerateImageLoading}>
           {isGenerateImageLoading ? (
             <div style={{display: "flex", flexDirection: 'row', justifyContent: 'center'}}>

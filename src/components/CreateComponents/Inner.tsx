@@ -135,7 +135,7 @@ const Inner: React.FC<Props> = ({
           value={font}
           placeholder="Select an option"
         />
-        <div style={{fontWeight: 'bold', marginBottom: '15px'}}>Font colour:</div>
+        <div style={{fontWeight: 'bold', marginBottom: '15px', backgroundColor: 'white'}}>Font colour:</div>
         <section className="color-picker">
         <HexColorPicker
           color={fontColor}
@@ -218,7 +218,7 @@ const Inner: React.FC<Props> = ({
               />
             )}
           </div>
-          <div>Age:</div>
+          <div className="poem-dropdown-description">Age:</div>
           <input
             type="number"
             placeholder="Example: 6"
@@ -227,7 +227,7 @@ const Inner: React.FC<Props> = ({
             value={age}
             onChange={(e) => setAge(e.target.value)}
           />
-          <div>Who is this for?:</div>
+          <div className="poem-dropdown-description">Who is this for?:</div>
           <ReactDropdown
             className="dropdown"
             arrowClassName="dropdown-option"
@@ -245,7 +245,7 @@ const Inner: React.FC<Props> = ({
               onChange={(e) => setInputs({ ...option, gender: e.target.value })}
             />
           )}
-          <div>Event:</div>
+          <div className="poem-dropdown-description">Event:</div>
           <ReactDropdown
             className="dropdown"
             arrowClassName="dropdown-option"
@@ -263,7 +263,7 @@ const Inner: React.FC<Props> = ({
               onChange={(e) => setInputs({ ...option, event: e.target.value })}
             />
           )}
-          <div>Theme:</div>
+          <div className="poem-dropdown-description">Theme:</div>
           <ReactDropdown
             className="dropdown"
             arrowClassName="dropdown-option"
