@@ -207,10 +207,8 @@ img[src=""] {
 }
 
 .background-div {
-  width: '40%';
-  min-width: 200px;
-  height: 30vw;
-  min-height: 275px;
+  width: 400px;
+  height: 600px;
   padding: 15px 15px 0px 15px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
@@ -469,7 +467,7 @@ img[src=""] {
 }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1240px) {
   .cover-side-options {
     position: relative;
     right: auto;
@@ -508,6 +506,10 @@ img[src=""] {
 @media (max-width: 700px) {
   .main-create-container {
     width: 100%;
+  }
+  .background-div {
+    width: 200px;
+    height: 275px;
   }
   .navbar-mine{
     display: none;
