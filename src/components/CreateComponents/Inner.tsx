@@ -135,7 +135,7 @@ const Inner: React.FC<Props> = ({
           value={font}
           placeholder="Select an option"
         />
-        <div style={{fontWeight: 'bold', marginBottom: '15px', backgroundColor: 'white'}}>Font colour:</div>
+        <div style={{fontWeight: 'bold', marginBottom: '15px'}}>Font colour:</div>
         <section className="color-picker">
         <HexColorPicker
           color={fontColor}

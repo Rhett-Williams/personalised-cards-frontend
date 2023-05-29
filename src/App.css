@@ -246,7 +246,6 @@ img[src=""] {
   display: flex;
   align-items: center;
   margin-top: 20px;
-  background-color: white;
 }
 
 .cover-form-prompt span {
@@ -262,6 +261,8 @@ img[src=""] {
   border-radius: 10px;
   color: #333;
   font-weight: bold;
+  border: #ff913a solid 2px;
+  background-color: white;
   cursor: pointer;
   transition: background-color 0.3s ease-in-out;
 }
@@ -350,7 +351,7 @@ img[src=""] {
 }
 
 .poem-dropdown-description {
-  background-color: white;
+ 
 }
 
 .Dropdown-menu .Dropdown-option{
