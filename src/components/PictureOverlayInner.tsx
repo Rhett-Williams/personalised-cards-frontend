@@ -22,7 +22,7 @@ const PictureOverlayInner = ({ image, text, onChange, font, fontColor, onLoad }:
         {image === '' && <img src={defaultImage} alt="Overlay Image" className="inner-image" style={{opacity: 0.6}}/>}
         <div
           style={{
-            height: "30vw",
+            height: "27vw",
             minHeight: "200px",
             width: "5px",
             backgroundColor: "grey",

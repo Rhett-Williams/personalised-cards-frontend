@@ -136,11 +136,12 @@ const Inner: React.FC<Props> = ({
           placeholder="Select an option"
         />
         <div style={{fontWeight: 'bold', marginBottom: '15px'}}>Font colour:</div>
+        <section className="color-picker">
         <HexColorPicker
-          style={{ width: "100px", height: "100px" }}
           color={fontColor}
           onChange={setFontColor}
         />
+        </section>
         <div>{fontColor}</div>
       </div>
       <div className="inner-form-container">

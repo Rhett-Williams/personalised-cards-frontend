@@ -11,6 +11,8 @@ import './fonts/Lauren-Regular.ttf'
 import './fonts/Alexander-Regular.ttf'
 import './App.css'
 import Footer from './components/Footer';
+import 'mdb-react-ui-kit/dist/css/mdb.min.css';
+import "@fortawesome/fontawesome-free/css/all.min.css";
 
 
 const App: React.FC = () => {

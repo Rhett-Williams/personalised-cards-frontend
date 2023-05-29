@@ -41,20 +41,91 @@ img[src=""] {
   }
 }
 
-.navbar {
+.navbar-mine {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 10vh;
-  background-image: url('./assets/navbarBackground.png');
-  background-size: cover;
-  background-position: center;
-  /* background-repeat: no-repeat; */
+  height: 7vh;
+  background-color: #ff913a;
+  right: 0px;
+  /* width: 30%; */
+  padding-left: 70px;
+  padding-right: 20px;
+  border-radius: 0px 0px 0px 70px;
+  position: absolute;
+}
+
+.hamburger-nav-bar {
+  display: none;
+}
+
+.home-create-button {
+  bottom: -50%;
+  position: absolute;
+  left: 35%;
+  padding-left: 40px;
+  padding-right: 40px;
+  background-color: white;
+  border: #ff913a solid 2px;
+  border-radius: 40px;
+  font-family: Charlie;
+  font-weight: 400;
+  font-size: 40px;
+  color: #ff913a;
+  transition: background-color 0.3s, box-shadow 0.3s, color 0.3s;
+}
+
+.home-create-button:hover {
+  background-color: #ff913a;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  color: white;
+}
+
+.home-welcome-container {
+  position: absolute;
+  top: 17vw;
+  left: 45%;
+  font-size: 20px;
+  width: 25vw;
+  height: 16vw;
+  padding: 5px;
+  z-index: 2;
+}
+
+.home-welcome-header {
+  text-align: center;
+  font-family: Charlie;
+  font-weight: 800;
+  font-size: 100px;
+  color: #ff913a;
+}
+
+.home-welcome-subtext {
+  text-align: center;
+  font-family: Charlie;
+  font-weight: 400;
+  font-size: 40px;
+}
+
+.home-create-button-mobile{
+  display: none;
+  margin: 10px 0px 10px 0px ;
+  padding-left: 40px;
+  align-self: center;
+  padding-right: 40px;
+  background-color: white;
+  border: #ff913a solid 2px;
+  border-radius: 40px;
+  font-family: Charlie;
+  font-weight: 400;
+  font-size: 40px;
+  color: #ff913a;
 }
 
 .navbar-list {
   display: flex;
   list-style: none;
+  align-items: center;
   padding: 0;
   margin: 0;
 }
@@ -100,10 +171,6 @@ img[src=""] {
   margin-bottom: 20px;
   margin-top: 30px;
 }
-
-
-
-
 
 .create-button {
   font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -284,16 +351,16 @@ img[src=""] {
 }
 
 .navbar-text {
-  font-size: 30px;
-  font-weight: 700;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 70px;
+  font-weight: 400;
+  font-family: Alexander;
   color:white;
   text-decoration: none;
   transition: color 0.3s ease, background-position 0.3s ease;
 }
 
 .navbar-text:hover {
-  color: orange;
+  color: black;
   background-position: 100% 50%;
 }
 
@@ -329,6 +396,53 @@ img[src=""] {
 .footer-content {
   max-width: 600px;
   margin: 0 auto;
+}
+
+@media(max-width: 1450px) {
+  .home-welcome-header {
+    font-size: 70px;
+
+  }
+  
+  .home-welcome-subtext {
+    font-size: 30px;
+}
+.home-create-button{
+  font-size: 22px;
+}
+}
+
+@media(max-width: 500px) {
+  .home-welcome-subtext {
+    display: none;
+}
+}
+
+
+@media(max-width: 1010px) {
+  .home-welcome-header {
+    font-size: 50px;
+
+  }
+  
+  .home-welcome-subtext {
+    font-size: 20px;
+}
+.home-create-button{
+  display: none;
+}
+.home-create-button-mobile {
+  display: inline;
+}
+}
+
+@media(max-width: 570px) {
+  .home-welcome-header {
+    font-size: 30px;
+  }
+  .home-welcome-subtext {
+    font-size: 12px;
+}
 }
 
 @media (max-width: 900px) {
@@ -370,5 +484,16 @@ img[src=""] {
 @media (max-width: 700px) {
   .main-create-container {
     width: 100%;
+  }
+  .navbar-mine{
+    display: none;
+  }
+  .hamburger-nav-bar{
+    display:block;
+    position: absolute;
+    background-color: #ff913a;
+    right: 0px;
+    padding-left: 20px;
+    border-radius: 0px 0px 0px 20px;
   }
 }
