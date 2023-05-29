@@ -19,7 +19,8 @@ const Create: React.FC = () => {
   const [font, setFont] = useState('Roboto')
   const [fontColor, setFontColor] = useState('#000000')
   const [isSurpriseMeLoading, setIsSurpriseMeLoading] = useState(false);
-  const [isGenerateImageLoading, setIsGenerateImageLoading] = useState(false);
+  const [isGenerateCoverImageLoading, setIsGenerateCoverImageLoading] = useState(false);
+  const [isGenerateInnerImageLoading, setIsGenerateInnerImageLoading] = useState(false);
   const [isPoemSurpriseMeLoading, setIsPoemSurpriseMeLoading] = useState(false);
   const [isGeneratePoemLoading, setIsGeneratePoemLoading] = useState(false);
   const [isPurchaseLoading, setIsPurchaseLoading] = useState(false)
@@ -29,12 +30,12 @@ const Create: React.FC = () => {
       case "Cover":
         return (
           <Cover
-            onLoad={() => setIsGenerateImageLoading(false)}
+            onLoad={() => setIsGenerateCoverImageLoading(false)}
             onNextPress={() => setCurrentStage('Inner')}
             onGenerate={onGenerate}
             handleSurpriseMe={onSurpriseMe}
             isSurpriseMeLoading={isSurpriseMeLoading}
-            isGenerateImageLoading={isGenerateImageLoading}
+            isGenerateImageLoading={isGenerateCoverImageLoading}
             prompt={coverPrompt}
             setPrompt={setCoverPrompt}
             coverImage={coverImage}
@@ -45,7 +46,7 @@ const Create: React.FC = () => {
       case "Inner":
         return (
           <Inner
-            onLoad={() => setIsGenerateImageLoading(false)}
+            onLoad={() => setIsGenerateInnerImageLoading(false)}
             onBackPress={() => setCurrentStage('Cover')}
             onGenerate={onGenerate}
             handleSurpriseMe={onSurpriseMe}
@@ -55,7 +56,7 @@ const Create: React.FC = () => {
             setInnerText={setInnerText}
             setInnerImagePrompt={setInnerPrompt}
             innerImagePrompt={innerPrompt}
-            isGenerateImageLoading={isGenerateImageLoading}
+            isGenerateImageLoading={isGenerateInnerImageLoading}
             handlePoemSurpriseMe={onPoemSurpriseMe}
             isPoemSurpriseMeLoading={isPoemSurpriseMeLoading}
             isGeneratingPoem={isGeneratePoemLoading}
@@ -98,14 +99,14 @@ const Create: React.FC = () => {
   const onGenerate = async () => {
     let prompt = ''
     switch(currentStage){
-        case 'Cover': prompt = coverPrompt; break
-        case 'Inner': prompt = innerPrompt; break
+        case 'Cover': prompt = coverPrompt; setIsGenerateCoverImageLoading(true); break
+        case 'Inner': prompt = innerPrompt; setIsGenerateInnerImageLoading(true); break
     }
     if (prompt === ''){
       alert("Please provide a prompt")
       return
     }
-    setIsGenerateImageLoading(true)
+    
     try {
       const response = await axios.post(`${apiUrl}generate-image`, {prompt});
       const { imageUrl } = response.data;
@@ -120,7 +121,10 @@ const Create: React.FC = () => {
     } catch (error) {
       console.error("Error fetching image prompt:", error);
       alert("Error getting image.")
-      setIsGenerateImageLoading(false)
+      switch(currentStage){
+        case 'Cover': prompt = coverPrompt; setIsGenerateCoverImageLoading(false); break
+        case 'Inner': prompt = innerPrompt; setIsGenerateInnerImageLoading(false); break
+    }
     }
   };
 
@@ -172,7 +176,7 @@ const Create: React.FC = () => {
     <div
       className="main-create-container"
     >
-      <div style={{position: 'absolute', left: 0, width: '100%', overflow: 'hidden'}}>
+      <div style={{position: 'absolute', left: 0, width: '100%', overflow: 'hidden', zIndex: -1}}>
       <img style={{ objectFit:'revert'}} src={Side}/>
       </div>
 
