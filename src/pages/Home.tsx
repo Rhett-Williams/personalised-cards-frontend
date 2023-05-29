@@ -73,6 +73,9 @@ const Home: React.FC = () => {
             </Carousel>
             
       </div>
+      <Link to="/create">
+          <button className='home-create-button-bottom'>{'Get started >>'}</button>
+        </Link>
       
       <div className='powered-by-container'>
         <div style={{width: '30%', fontSize: '50px', fontFamily: 'Roboto', fontWeight: 700, marginBottom: 10}}>Powered by:</div>
