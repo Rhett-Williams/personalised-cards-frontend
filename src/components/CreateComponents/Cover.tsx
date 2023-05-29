@@ -81,6 +81,7 @@ const Cover: React.FC<Props> = ({
         <input
           type="text"
           className="text-input"
+          placeholder="Example: A dinosaur sitting on a mountain watching the sunset"
           value={prompt}
           onChange={(e) => setPrompt(e.target.value)}
         />

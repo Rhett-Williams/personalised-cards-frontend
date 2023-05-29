@@ -168,6 +168,7 @@ const Inner: React.FC<Props> = ({
           </div>
           <input
             type="text"
+            placeholder="Example: A dinosaur sitting on a mountain watching the sunset"
             className="text-input"
             value={innerImagePrompt}
             onChange={(e) => setInnerImagePrompt(e.target.value)}
