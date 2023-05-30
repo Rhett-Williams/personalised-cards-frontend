@@ -1,1 +1,1 @@
-export const apiUrl = 'http://localhost:3003/'
+export const apiUrl = 'https://personalised-cards.netlify.app/'
