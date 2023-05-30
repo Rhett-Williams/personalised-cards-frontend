@@ -87,7 +87,7 @@ const Create: React.FC = () => {
           setIsPurchaseLoading(false)
           return
         }
-        const response = await axios.post(`${apiUrl}createPaymentLink`, payload);
+        const response = await axios.post(`${apiUrl}createPaymentLink`, {payload});
         window.open(response.data.paymentLink)
     } catch (error) {
         console.log("error", error)
@@ -97,14 +97,21 @@ const Create: React.FC = () => {
 
   const onGenerate = async () => {
     let prompt = ''
+
     switch(currentStage){
-        case 'Cover': prompt = coverPrompt; setIsGenerateCoverImageLoading(true); break
-        case 'Inner': prompt = innerPrompt; setIsGenerateInnerImageLoading(true); break
-    }
+      case 'Cover': prompt = coverPrompt; setIsGenerateCoverImageLoading(true); break
+      case 'Inner': prompt = innerPrompt; setIsGenerateInnerImageLoading(true); break
+  }
     if (prompt === ''){
       alert("Please provide a prompt")
+      switch(currentStage){
+        case 'Cover': prompt = coverPrompt; setIsGenerateCoverImageLoading(false); break
+        case 'Inner': prompt = innerPrompt; setIsGenerateInnerImageLoading(false); break
+    }
       return
     }
+    
+
     
     try {
       const response = await axios.post(`${apiUrl}generate-image`, {prompt});
@@ -121,8 +128,8 @@ const Create: React.FC = () => {
       console.error("Error fetching image prompt:", error);
       alert("Error getting image.")
       switch(currentStage){
-        case 'Cover': prompt = coverPrompt; setIsGenerateCoverImageLoading(false); break
-        case 'Inner': prompt = innerPrompt; setIsGenerateInnerImageLoading(false); break
+        case 'Cover': prompt = coverPrompt; setIsGenerateCoverImageLoading(false); console.log("this go?"); break
+        case 'Inner': prompt = innerPrompt; setIsGenerateInnerImageLoading(false); console.log("this 123123go?"); break
     }
     }
   };
