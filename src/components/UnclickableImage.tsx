@@ -17,11 +17,11 @@ const closeModal = () => {
 };
 
 return (
-    <div>
-    <img className={className} src={image} alt="Your Image" onClick={openModal} draggable="false" />
+    <div className={className}>
+    <img  src={image} alt="Your Image" onClick={openModal} draggable="false" />
     <Modal isOpen={isModalOpen} onRequestClose={closeModal}>
         {/* Your enlarged image view */}
-        <img className={className} src={image} alt="Your Image" />
+        <img src={image} alt="Your Image" />
     </Modal>
     </div>
 );
