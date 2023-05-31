@@ -65,6 +65,7 @@ const Create: React.FC = () => {
             fontColor={fontColor}
             setFont={setFont}
             setFontColor={setFontColor}
+            pageColor={coverColour}
           />
         );
     }

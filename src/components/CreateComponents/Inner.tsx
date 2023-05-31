@@ -29,6 +29,7 @@ type Props = {
   setFont: (font: string) => void
   setFontColor: (fontColor: string) => void
   onLoad: () => void
+  pageColor: string
 };
 
 const Inner: React.FC<Props> = ({
@@ -50,7 +51,8 @@ const Inner: React.FC<Props> = ({
   fontColor,
   setFont,
   setFontColor,
-  onLoad
+  onLoad,
+  pageColor
 }) => {
   const [isVisible, setIsVisible] = useState(false);
   const [option, setOption] = useState<{
@@ -124,6 +126,7 @@ const Inner: React.FC<Props> = ({
         font={font}
         fontColor={fontColor}
         onChange={setInnerText}
+        pageColor={pageColor}
       />
       <div className="inner-side-options">
         <div style={{paddingLeft: 10, fontWeight: 'bold', marginBottom: '15px'}}>Font:</div>

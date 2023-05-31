@@ -8,11 +8,12 @@ type Props = {
   font: string;
   fontColor: string
   onLoad: () => void
+  pageColor: string
 };
 
-const PictureOverlayInner = ({ image, text, onChange, font, fontColor, onLoad }: Props) => {
+const PictureOverlayInner = ({ image, text, onChange, font, fontColor, onLoad, pageColor }: Props) => {
   return (
-    <div className="picture-overlay-inner">
+    <div className="picture-overlay-inner" style={{backgroundColor: pageColor ?? 'white'}}>
       <div className="inner-container" style={{ width: '46vw'}}>
         <img
           onLoad={onLoad}
