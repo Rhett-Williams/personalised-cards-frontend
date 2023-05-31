@@ -11,14 +11,10 @@ import inspo2 from '../assets/Inspo2.png'
 import inspo3 from '../assets/Inspo3.png'
 import inspo4 from '../assets/Inspo4.png'
 import Side from '../assets/this.png'
-import Logo from '../assets/logo-PhotoRoom.png-PhotoRoom.png'
 
 const Home: React.FC = () => {
   return (
     <div style={{alignItems: 'center', width: '100%', display: 'flex', flexDirection: 'column',}}>
-      <div style={{position: 'absolute', top: 0, width: '100%'}}>
-        <img style={{ objectFit:'revert'}} src={Logo}/>
-      </div>
       <div style={{position: 'absolute', left: 0, width: '100%', overflow: 'hidden', top: '120%', zIndex: -10}}>
         <img style={{ objectFit:'revert'}} src={Side}/>
       </div>
