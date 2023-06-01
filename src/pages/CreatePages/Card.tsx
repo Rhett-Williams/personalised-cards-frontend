@@ -115,7 +115,7 @@ const CreateCard: React.FC = () => {
 
     
     try {
-      const response = await axios.post(`${apiUrl}generate-image`, {prompt});
+      const response = await axios.post(`${apiUrl}generateImage`, {prompt});
       const { imageUrl } = response.data;
       switch (currentStage) {
         case "Cover":
@@ -138,7 +138,7 @@ const CreateCard: React.FC = () => {
   const onSurpriseMe = async () => {
     setIsSurpriseMeLoading(true);
     try {
-      const response = await axios.get(`${apiUrl}generate-image-prompt`);
+      const response = await axios.get(`${apiUrl}generateImagePrompt`);
       const prompt = response.data.prompt.replaceAll('"', '');
       switch (currentStage) {
         case "Cover":
@@ -157,7 +157,7 @@ const CreateCard: React.FC = () => {
   const onPoemSurpriseMe = async () => {
     setIsPoemSurpriseMeLoading(true);
     try {
-      const response = await axios.get(`${apiUrl}generate-random-poem`);
+      const response = await axios.get(`${apiUrl}generateRandomPoem`);
       const poem = response.data.poem.replaceAll('"', '');
       setInnerText(poem.replace(/"/g, '').replace(/\\n/g, '\n'))
     } catch (error) {
@@ -169,7 +169,7 @@ const CreateCard: React.FC = () => {
   const onGeneratePoem = async (age: string, gender: string, theme: string, event: string) => {
     setIsGeneratePoemLoading(true);
     try {
-      const response = await axios.post(`${apiUrl}generate-poem`, {age, gender, theme, event});
+      const response = await axios.post(`${apiUrl}generatePoem`, {age, gender, theme, event});
       console.log("asd", response.data)
       const poem = response.data.poem;
       setInnerText(poem.replace(/"/g, '').replace(/\\n/g, '\n'))

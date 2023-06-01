@@ -55,7 +55,7 @@ const CreateShirt: React.FC = () => {
     }
     
     try {
-      const response = await axios.post(`${apiUrl}generate-image`, {prompt});
+      const response = await axios.post(`${apiUrl}generateImage`, {prompt});
       const { imageUrl } = response.data;
       setImage(imageUrl)
     } catch (error) {
@@ -68,7 +68,7 @@ const CreateShirt: React.FC = () => {
   const onSurpriseMe = async () => {
     setIsSurpriseMeLoading(true);
     try {
-      const response = await axios.get(`${apiUrl}generate-image-prompt`);
+      const response = await axios.post(`${apiUrl}trackingDetailsEmail`);
       const prompt = response.data.prompt.replaceAll('"', '');
       setPrompt(prompt);
     } catch (error) {
