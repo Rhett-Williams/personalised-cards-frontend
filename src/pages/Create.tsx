@@ -32,13 +32,13 @@ const Create: React.FC = () => {
     if (selectedOption !== 'none') return
     return (
       <>
-        <div style={{fontFamily: 'Alexander', fontSize: '70px', color: 'black', marginBottom: 50, textAlign: 'center'}}>Choose which product you would like to create!</div>
+        <div style={{fontFamily: "IBM Plex Sans", fontSize: '30px', color: 'black', marginBottom: 50, textAlign: 'center', paddingRight: 10, paddingLeft: 10}}>Choose which product you would like to create!</div>
         <div style={{display: 'flex', flexDirection: 'row', flexWrap: 'wrap', width: '70%', justifyContent: 'space-between'}}>
           {options.map((option) => {
             return <ImageCard name={option.name} image={option.image} onClick={() => setSelectedOption(option.id)}/>
           })}
         </div>
-        <div style={{fontFamily: 'Alexander', fontSize: '70px', color: 'black', marginTop: 50, textAlign: 'center'}}>More Coming Soon...</div>
+        <div style={{fontFamily: "IBM Plex Sans", fontSize: '30px', color: 'black', marginTop: 50, textAlign: 'center'}}>More Coming Soon...</div>
       </>
 )      
     
@@ -55,7 +55,10 @@ const Create: React.FC = () => {
 
   return (
     <div className="main-create-container">
-
+      <link
+          href="https://fonts.googleapis.com/css?family=Heebo:400,700|IBM+Plex+Sans:600"
+          rel="stylesheet"
+        />
         {renderOptions()}
 
       {selectedOption !== 'none' && <div style={{cursor: 'pointer'}} onClick={() => setSelectedOption('none')}>{'<< Back'}</div>}

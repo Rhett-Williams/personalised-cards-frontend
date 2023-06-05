@@ -184,10 +184,9 @@ img[src=""] {
   flex-direction: column;
   align-items: center;
   margin: 0 auto;
-  padding-top: 100px
+  padding-top: 100px;
+  min-height: 100vh;
 }
-
-
 
 .create-page-headers {
   display: flex;
@@ -274,6 +273,13 @@ img[src=""] {
   width: 400px;
   height: 600px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.shirt-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
 }
 
 .overlay-image {
@@ -461,7 +467,7 @@ img[src=""] {
 .cover-side-options {
   position: absolute;
   right: -100px;
-  width: 200px;
+  width: 300px;
   padding-left: 10px
 }
 
@@ -544,8 +550,9 @@ img[src=""] {
     position: relative;
     left: 0;
   }
+  
   .main-create-container{
-    padding-top: 0px;
+    padding-top: 60px;
   }
 }
 
@@ -580,7 +587,7 @@ img[src=""] {
   .cover-side-options {
     position: relative;
     right: auto;
-    width: 200px;
+    width: 300px;
   }
   .inner-side-options {
     position: relative;

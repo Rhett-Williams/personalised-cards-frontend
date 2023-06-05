@@ -2,6 +2,9 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { HexColorPicker } from 'react-colorful';
 import { ThreeDots } from 'react-loader-spinner';
+import defaultImage from '../../assets/defaultImage.png';
+import TShirt from '../../assets/tShirt';
+import ReactDropdown from 'react-dropdown';
 
 const CreateShirt: React.FC = () => {
     const [currentStage, setCurrentStage] = useState<
@@ -9,8 +12,7 @@ const CreateShirt: React.FC = () => {
   >("Cover");
   const [prompt, setPrompt] = useState("");
   const [image, setImage] = useState("");
-  const [color, setColor] = useState('#ffffff');
-  const [size, setSize] = useState('')
+  const [color, setColor] = useState<any>({label: "Navy", value: "white"});
   const [isSurpriseMeLoading, setIsSurpriseMeLoading] = useState(false);
   const [isGenerateCoverImageLoading, setIsGenerateCoverImageLoading] = useState(false);
   const [isPurchaseLoading, setIsPurchaseLoading] = useState(false)
@@ -28,7 +30,7 @@ const CreateShirt: React.FC = () => {
     try {
         const payload = {
           image,
-          color,
+          color: color.value,
         }
         const hasEmptyValue = Object.values(payload).some(value => value === '');
         if (hasEmptyValue){
@@ -76,6 +78,19 @@ const CreateShirt: React.FC = () => {
     setIsSurpriseMeLoading(false);
   };
 
+  const colorOptions = [
+    {label: "Black Triblend", value: "#141615"},
+    {label: "Charcoal Black", value: "#3d3935"},
+    {label: "Green Triblend", value: "#507158"},
+    {label: "Navy", value: "#0d121e"},
+    {label: "Navy Triblend", value: "#474960"},
+    {label: "Olive", value: "#434c31"},
+    {label: "Red", value: "#ff0000"},
+    {label: "Red Triblend", value: "#cb333b"},
+    {label: "True Royal", value: "#1c438c"},
+    {label: "True Royal Triblend", value: "#2f55a4"},
+  ]
+
   return (
     <>
     <div
@@ -83,16 +98,28 @@ const CreateShirt: React.FC = () => {
       style={{marginBottom: 70}}
       onAnimationEnd={() => setIsVisible(false)}
     >
-      
+      <div style={{width: 500, minWidth: 300, display: 'flex', justifyContent: 'center'}}>
+        {/* @ts-ignore */}
+        <TShirt color={color.value ?? 'white'}/>
+          <div style={{position: 'absolute', width: 200, top: 100, height: 250}}>
+            <img src={image} onLoad={() => setIsGenerateCoverImageLoading(false)} className="shirt-image" />
+            {image === '' && <img src={defaultImage} alt="Overlay Image" className="shirt-image" style={{opacity: 0.6}}/>}
+          </div>
+
+      </div>
+
       <div className="cover-side-options">
         <div style={{fontWeight: 'bold', marginBottom: '15px'}}>Page colour:</div>
         <section className="color-picker">
-        <HexColorPicker
-          color={color}
-          onChange={setColor}
+        <ReactDropdown
+          className="dropdown"
+          arrowClassName="dropdown-option"
+          options={colorOptions}
+          onChange={(value) => setColor(value)}
+          value={color.value}
+          placeholder="Select an option"
         />
         </section>
-        <div>{color}</div>
       </div>
       <div className="cover-form-container">
         <div className="cover-form-prompt">
