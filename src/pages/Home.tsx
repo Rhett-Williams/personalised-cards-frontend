@@ -1,89 +1,199 @@
 import React from 'react';
-import backgroundImage from '../assets/homeBackgroundImage.jpg'
-import homePageImage1 from '../assets/homePageImage1.png'
-import OpenAiLogo from '../assets/OpenAI_Logo.svg.png'
-import Dalle2Logo from '../assets/download.jpg'
-import { Link } from 'react-router-dom';
-import { Carousel } from 'react-responsive-carousel';
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
-import inspo1 from '../assets/Inspo1.png'
-import inspo2 from '../assets/Inspo2.png'
-import inspo3 from '../assets/Inspo3.png'
-import inspo4 from '../assets/Inspo4.png'
-import Side from '../assets/this.png'
+import '../style.css'
+import Logo from "../assets/Logo.png"
+import HeaderIllustration from "../assets/switchImages/header-illustration-light.svg"
+import HeroMediaIllustration from "../assets/switchImages/hero-media-illustration-light.svg"
+import HeroMedia from "../assets/switchImages/hero-media-light.svg"
+import FeatureIllustration from "../assets/switchImages/features-illustration-light.svg"
+import FeatureBox from "../assets/switchImages/features-box-light.svg"
+import FeatureIllustrationTop from "../assets/switchImages/features-illustration-top-light.svg"
+import Feature03 from "../assets/switchImages/feature-03-light.svg"
+import Feature02 from "../assets/switchImages/feature-02-light.svg"
+import Feature01 from "../assets/switchImages/feature-01-light.svg"
 
 const Home: React.FC = () => {
   return (
-    <div style={{alignItems: 'center', width: '100%', display: 'flex', flexDirection: 'column',}}>
-      <div style={{position: 'absolute', left: 0, width: '100%', overflow: 'hidden', top: '120%', zIndex: -10}}>
-        <img style={{ objectFit:'revert'}} src={Side}/>
-      </div>
-      <img className="side-image-removing" style={{top: '120%'}} src={Side}/>
-      <img src={backgroundImage} style={{width: '100%'}}/>
-      <div className='home-welcome-container'>
-        <div className='home-welcome-header'>Welcome!</div>
-        <div className='home-welcome-subtext'>Personalised cards for any age, anyone one and any occasion!</div>
-        <Link to="/create">
-          <button className='home-create-button'>{'Get started >>'}</button>
-        </Link>
-      </div>
-      <Link to="/create">
-        <button className='home-create-button-mobile'>{'Get started >>'}</button>
-      </Link>
-      <div style={{width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', paddingTop: '30px', paddingBottom: '30px'}}>
-        <div style={{display: 'flex', flexWrap: 'wrap', flexDirection: 'row', width: '70%', justifyContent: 'center'}}>
-          <div style={{width: '50%', minWidth: '300px', justifyContent: 'center', display: 'flex'}}>
-            <img
-              style={{width:'50%', objectFit: 'contain'}}
-              src={homePageImage1}/>
-          </div>
-          <div style={{width: '50%', minWidth: '300px', height: '100%', padding: '15px'}}>
-              <div style={{fontWeight: 700, fontSize: '30px'}}>How to use:</div>
-              <ul>
-                <li>1. Navigate to the "Create" page.</li>
-                <li>2. Enter a prompt or click "Surprise me" to have AI generate a random cover image idea for your card. You can also choose the card's background colour with the colour picker.</li>
-                <li>3. Click next and design the inside of the card. Add an image to the left and write a poem on the right or get AI to generate one based on your chosen specifications.</li>
-                <li>4. Click purchase down the bottom and you're all done! Remember the address you use for the payment is where the card will be sent. So if you are sending it straight to the recipient, put down there name on the payment screen!</li>
-              </ul>
+      <>
+  <meta charSet="utf-8" />
+  <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Switch Template</title>
+  <link
+    href="https://fonts.googleapis.com/css?family=Heebo:400,700|IBM+Plex+Sans:600"
+    rel="stylesheet"
+  />
+  <div className="body-wrap boxed-container">
+    <header className="site-header">
+      <div className="container">
+        <div className="site-header-inner">
+          <div className="brand header-brand">
+            <h1 className="m-0">
+              <a href="#">
+                <img
+                  style={{paddingTop: 20}}
+                  className="header-logo-image"
+                  src={Logo}
+                  alt="Logo"
+                />
+              </a>
+            </h1>
           </div>
         </div>
-        
       </div>
-      
-      <div style={{width: '90%', display: 'flex', flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center'}}>
-
-        <div style={{fontSize: 90, marginRight: 50, fontFamily: 'Alexander'}}>Inspiration:</div>
-      <Carousel className='home-carousel'>
-                <div>
-                    <img src={inspo1} />
-                    <p className="legend">Luminous jellyfish dance under a moonlit ocean sky.</p>
+    </header>
+    <main>
+      <section className="hero">
+        <div className="container">
+          <div className="hero-inner">
+            <div className="hero-copy">
+              <h1 className="hero-title mt-0">Landing template for startups</h1>
+              <p className="hero-paragraph">
+                Our landing page template works on all devices, so you only have
+                to set it up once, and get beautiful results forever.
+              </p>
+              <div className="hero-cta">
+                <a className="button button-primary" href="#">
+                  Buy it now
+                </a>
+              </div>
+            </div>
+            <div className="hero-media">
+              <div className="header-illustration">
+                <img
+                  className="header-illustration-image"
+                  src={HeaderIllustration}
+                  alt="Header illustration"
+                />
+              </div>
+              <div className="hero-media-illustration">
+                <img
+                  className="hero-media-illustration-image"
+                  src={HeroMediaIllustration}
+                  alt="Hero media illustration"
+                />
+                
+              </div>
+              <div className="hero-media-container">
+                <img
+                  className="hero-media-image"
+                  src={HeroMedia}
+                  alt="Hero media"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className="features section">
+        <div className="container">
+          <div className="features-inner section-inner has-bottom-divider">
+            <div className="features-header text-center">
+              <div className="container-sm">
+                <h2 className="section-title mt-0">The Product</h2>
+                <p className="section-paragraph">
+                  Lorem ipsum is common placeholder text used to demonstrate the
+                  graphic elements of a document or visual presentation.
+                </p>
+                <div className="features-image">
+                  <img
+                    className="features-illustration"
+                    src={FeatureIllustration}
+                    alt="Feature illustration"
+                  />
+                  <img
+                    className="features-box"
+                    src={FeatureBox}
+                    alt="Feature box"
+                  />
+                  <img
+                    className="features-illustration"
+                    src={FeatureIllustrationTop}
+                    alt="Feature illustration top"
+                  />
                 </div>
-                <div>
-                    <img src={inspo2} />
-                    <p className="legend">An underwater adventure with a friendly sea creature, pixel art, 4k</p>
+              </div>
+            </div>
+            <div className="features-wrap">
+              <div className="feature is-revealing">
+                <div className="feature-inner">
+                  <div className="feature-icon">
+                    <img
+                      src={Feature01}
+                      alt="Feature 01"
+                    />
+                  </div>
+                  <div className="feature-content">
+                    <h3 className="feature-title mt-0">Discover</h3>
+                    <p className="text-sm mb-0">
+                      Lorem ipsum dolor sit amet, consecte adipiscing elit, sed
+                      do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua dui.
+                    </p>
+                  </div>
                 </div>
-                <div>
-                    <img src={inspo3} />
-                    <p className="legend">pixar 3d render of A treehouse with a secret entrance hidden in the trunk of a large tree.</p>
+              </div>
+              <div className="feature is-revealing">
+                <div className="feature-inner">
+                  <div className="feature-icon">
+                    <img
+                      src={Feature02}
+                      alt="Feature 02"
+                    />
+                  </div>
+                  <div className="feature-content">
+                    <h3 className="feature-title mt-0">Discover</h3>
+                    <p className="text-sm mb-0">
+                      Lorem ipsum dolor sit amet, consecte adipiscing elit, sed
+                      do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua dui.
+                    </p>
+                  </div>
                 </div>
-                <div>
-                    <img src={inspo4} />
-                    <p className="legend">A robot and a dinosaur having a tea party in a futuristic city. vibrant colours, 4k</p>
+              </div>
+              <div className="feature is-revealing">
+                <div className="feature-inner">
+                  <div className="feature-icon">
+                    <img
+                      src={Feature03}
+                      alt="Feature 03"
+                    />
+                  </div>
+                  <div className="feature-content">
+                    <h3 className="feature-title mt-0">Discover</h3>
+                    <p className="text-sm mb-0">
+                      Lorem ipsum dolor sit amet, consecte adipiscing elit, sed
+                      do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua dui.
+                    </p>
+                  </div>
                 </div>
-            </Carousel>
-            
-      </div>
-      <Link to="/create">
-          <button className='home-create-button-bottom'>{'Get started >>'}</button>
-        </Link>
-      
-      <div className='powered-by-container'>
-        <div style={{width: '30%', fontSize: '50px', fontFamily: 'Roboto', fontWeight: 700, marginBottom: 10}}>Powered by:</div>
-        <img style={{width: '30%', minWidth: '200px', objectFit: 'contain', marginBottom: 10}} src={OpenAiLogo}/>
-        <img style={{width: '30%', objectFit: 'contain', minWidth: '200px'}} src={Dalle2Logo}/>
-      </div>
-      
-    </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className="cta section">
+        <div className="container-sm">
+          <div className="cta-inner section-inner">
+            <div className="cta-header text-center">
+              <h2 className="section-title mt-0">Get it and Switch</h2>
+              <p className="section-paragraph">
+                Lorem ipsum is common placeholder text used to demonstrate the
+                graphic elements of a document or visual presentation.
+              </p>
+              <div className="cta-cta">
+                <a className="button button-primary" href="#">
+                  Buy it now
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+</>
   );
 };
 

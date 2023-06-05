@@ -9,8 +9,8 @@ import {
 } from 'mdb-react-ui-kit';
 import { Link } from 'react-router-dom';
 
-export default function NavbarHamburger() {
-  const [showNavExternal3, setShowNavExternal3] = useState(false);
+export default function NavbarHamburger({externalNav, onSetShowExternal}: any) {
+
 
   return (
     <>
@@ -23,22 +23,22 @@ export default function NavbarHamburger() {
             aria-controls='navbarToggleExternalContent'
             aria-expanded='false'
             aria-label='Toggle navigation'
-            onClick={() => setShowNavExternal3(!showNavExternal3)}
+            onClick={onSetShowExternal}
           >
             <MDBIcon icon='bars' fas />
           </MDBNavbarToggler>
         </MDBContainer>
       </MDBNavbar>
 
-      <MDBCollapse show={showNavExternal3} >
+      <MDBCollapse show={externalNav} >
         <div className='bg-light shadow-3 p-4'  >
         <Link to="/">
-          <MDBBtn block className='border-bottom m-0' color='link' onClick={() => setShowNavExternal3(!showNavExternal3)}>
+          <MDBBtn block className='border-bottom m-0' color='link' onClick={onSetShowExternal}>
             Home
           </MDBBtn>
         </Link>
         <Link to="/create">
-          <MDBBtn block className='border-bottom m-0' color='link' onClick={() => setShowNavExternal3(!showNavExternal3)}>
+          <MDBBtn block className='border-bottom m-0' color='link' onClick={onSetShowExternal}>
             Create
           </MDBBtn>
         </Link>

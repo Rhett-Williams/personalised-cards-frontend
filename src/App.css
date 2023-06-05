@@ -41,18 +41,22 @@ img[src=""] {
   }
 }
 
+.navbar{
+  border-radius: 0px 0px 0px 20px;
+}
 .navbar-mine {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 7vh;
   background-color: #ff913a;
-  right: 0px;
+  right: 200px;
   /* width: 30%; */
   padding-left: 70px;
-  padding-right: 20px;
-  border-radius: 0px 0px 0px 70px;
+  padding-right: 70px;
+  border-radius: 0px 0px 70px 70px;
   position: absolute;
+  z-index: 1000;
 }
 
 .hamburger-nav-bar {
@@ -508,6 +512,9 @@ img[src=""] {
     font-size: 70px;
 
   }
+  .navbar-mine{
+    right: 0px;
+  }
   
   .home-welcome-subtext {
     font-size: 30px;
@@ -531,6 +538,7 @@ img[src=""] {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+   
   }
   .main-logo-image{
     position: relative;

@@ -1,12 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import NavbarHamburger from './NavbarHamburger';
 import Logo from '../assets/Logo.png'
 
 const Navbar = () => {
+  const [showNavExternal3, setShowNavExternal3] = useState(false);
   return (
     <div className='nav-bar-container'>
-    <img className='main-logo-image' src={Logo}/>
     <nav className="navbar-mine">
       <ul className="navbar-list">
         <li className="navbar-item">
@@ -18,8 +18,8 @@ const Navbar = () => {
         </li>
       </ul>
     </nav>
-    <div className='hamburger-nav-bar' style={{zIndex: 5}}>
-      <NavbarHamburger />
+    <div className='hamburger-nav-bar' style={{zIndex: 5, width: showNavExternal3 ? 200 : 80, padding: 0}}>
+      <NavbarHamburger externalNav={showNavExternal3} onSetShowExternal={() => setShowNavExternal3(!showNavExternal3)}/>
     </div>
     </div>
   );
