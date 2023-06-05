@@ -11,7 +11,6 @@ import inspo2 from '../assets/Inspo2.png'
 import inspo3 from '../assets/Inspo3.png'
 import inspo4 from '../assets/Inspo4.png'
 import Side from '../assets/this.png'
-import ProgressiveImage from 'react-progressive-image';
 
 const Home: React.FC = () => {
   return (
@@ -20,12 +19,7 @@ const Home: React.FC = () => {
         <img style={{ objectFit:'revert'}} src={Side}/>
       </div>
       <img className="side-image-removing" style={{top: '120%'}} src={Side}/>
-{/* @ts-ignore */}
-      <ProgressiveImage
-          src={backgroundImage}
-        >
-      {(src: any) => <img src={src}  style={{width: '100%'}} alt='home-background-image'/>}
-      </ProgressiveImage>
+      <img src={backgroundImage} style={{width: '100%'}}/>
       <div className='home-welcome-container'>
         <div className='home-welcome-header'>Welcome!</div>
         <div className='home-welcome-subtext'>Personalised cards for any age, anyone one and any occasion!</div>
