@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { apiUrl } from "../Constants";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import Error from "../components/PaymentCompleteComponents/Error";
@@ -13,7 +12,7 @@ const PaymentComplete: React.FC = () => {
 
   const validatePayment = async (routeId?: string) => {
     try {
-      const response = await axios.post(`${apiUrl}validatePayment`, {
+      const response = await axios.post(`${process.env.REACT_APP_API_URL}validatePayment`, {
         paymentLinkId: routeId
       });
       if (!response.data.isValidPayment) throw Error;

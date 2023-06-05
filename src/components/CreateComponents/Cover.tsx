@@ -47,16 +47,6 @@ const Cover: React.FC<Props> = ({
     >
 
       <PictureOverlay image={coverImage} backgroundColor={coverColor} onLoad={onLoad}/>
-      <div className="cover-side-options">
-        <div style={{fontWeight: 'bold', marginBottom: '15px'}}>Page colour:</div>
-        <section className="color-picker">
-        <HexColorPicker
-          color={coverColor}
-          onChange={setCoverColor}
-        />
-        </section>
-        <div>{coverColor}</div>
-      </div>
       <div className="cover-form-container">
         <div className="cover-form-prompt">
           <span >Image prompt:</span>

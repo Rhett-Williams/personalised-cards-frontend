@@ -3,7 +3,6 @@ import Cover from "../../components/CreateComponents/Cover";
 import Inner from "../../components/CreateComponents/Inner";
 import Side from '../../assets/this.png'
 import axios from "axios";
-import { apiUrl } from "../../Constants";
 import { ThreeDots } from "react-loader-spinner";
 
 const CreateCard: React.FC = () => {
@@ -88,7 +87,7 @@ const CreateCard: React.FC = () => {
           setIsPurchaseLoading(false)
           return
         }
-        const response = await axios.post(`${apiUrl}createPaymentLink`, {payload});
+        const response = await axios.post(`${process.env.REACT_APP_API_URL}createPaymentLink`, {payload});
         window.open(response.data.paymentLink)
     } catch (error) {
         console.log("error", error)
@@ -115,7 +114,7 @@ const CreateCard: React.FC = () => {
 
     
     try {
-      const response = await axios.post(`${apiUrl}generateImage`, {prompt});
+      const response = await axios.post(`${process.env.REACT_APP_API_URL}generateImage`, {prompt});
       const { imageUrl } = response.data;
       switch (currentStage) {
         case "Cover":
@@ -138,7 +137,7 @@ const CreateCard: React.FC = () => {
   const onSurpriseMe = async () => {
     setIsSurpriseMeLoading(true);
     try {
-      const response = await axios.get(`${apiUrl}generateImagePrompt`);
+      const response = await axios.get(`${process.env.REACT_APP_API_URL}generateImagePrompt`);
       const prompt = response.data.prompt.replaceAll('"', '');
       switch (currentStage) {
         case "Cover":
@@ -157,7 +156,7 @@ const CreateCard: React.FC = () => {
   const onPoemSurpriseMe = async () => {
     setIsPoemSurpriseMeLoading(true);
     try {
-      const response = await axios.get(`${apiUrl}generateRandomPoem`);
+      const response = await axios.get(`${process.env.REACT_APP_API_URL}generateRandomPoem`);
       const poem = response.data.poem.replaceAll('"', '');
       setInnerText(poem.replace(/"/g, '').replace(/\\n/g, '\n'))
     } catch (error) {
@@ -169,7 +168,7 @@ const CreateCard: React.FC = () => {
   const onGeneratePoem = async (age: string, gender: string, theme: string, event: string) => {
     setIsGeneratePoemLoading(true);
     try {
-      const response = await axios.post(`${apiUrl}generatePoem`, {age, gender, theme, event});
+      const response = await axios.post(`${process.env.REACT_APP_API_URL}generatePoem`, {age, gender, theme, event});
       console.log("asd", response.data)
       const poem = response.data.poem;
       setInnerText(poem.replace(/"/g, '').replace(/\\n/g, '\n'))

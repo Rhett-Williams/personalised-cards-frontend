@@ -1,7 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { HexColorPicker } from 'react-colorful';
-import { apiUrl } from '../../Constants';
 import { ThreeDots } from 'react-loader-spinner';
 
 const CreateShirt: React.FC = () => {
@@ -37,7 +36,7 @@ const CreateShirt: React.FC = () => {
           setIsPurchaseLoading(false)
           return
         }
-        const response = await axios.post(`${apiUrl}createPaymentLink`, {payload});
+        const response = await axios.post(`${process.env.REACT_APP_API_URL}createPaymentLink`, {payload});
         window.open(response.data.paymentLink)
     } catch (error) {
         console.log("error", error)
@@ -55,7 +54,7 @@ const CreateShirt: React.FC = () => {
     }
     
     try {
-      const response = await axios.post(`${apiUrl}generateImage`, {prompt});
+      const response = await axios.post(`${process.env.REACT_APP_API_URL}generateImage`, {prompt});
       const { imageUrl } = response.data;
       setImage(imageUrl)
     } catch (error) {
@@ -68,7 +67,7 @@ const CreateShirt: React.FC = () => {
   const onSurpriseMe = async () => {
     setIsSurpriseMeLoading(true);
     try {
-      const response = await axios.post(`${apiUrl}trackingDetailsEmail`);
+      const response = await axios.post(`${process.env.REACT_APP_API_URL}trackingDetailsEmail`);
       const prompt = response.data.prompt.replaceAll('"', '');
       setPrompt(prompt);
     } catch (error) {

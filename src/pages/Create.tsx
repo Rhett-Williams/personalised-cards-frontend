@@ -32,13 +32,13 @@ const Create: React.FC = () => {
     if (selectedOption !== 'none') return
     return (
       <>
-        <div style={{fontFamily: 'Alexander', fontSize: '70px', color: 'black', marginBottom: 50}}>Choose which product you would like to create!</div>
+        <div style={{fontFamily: 'Alexander', fontSize: '70px', color: 'black', marginBottom: 50, textAlign: 'center'}}>Choose which product you would like to create!</div>
         <div style={{display: 'flex', flexDirection: 'row', flexWrap: 'wrap', width: '70%', justifyContent: 'space-between'}}>
           {options.map((option) => {
             return <ImageCard name={option.name} image={option.image} onClick={() => setSelectedOption(option.id)}/>
           })}
         </div>
-        <div style={{fontFamily: 'Alexander', fontSize: '70px', color: 'black', marginTop: 50}}>More Coming Soon...</div>
+        <div style={{fontFamily: 'Alexander', fontSize: '70px', color: 'black', marginTop: 50, textAlign: 'center'}}>More Coming Soon...</div>
       </>
 )      
     
