@@ -29,8 +29,10 @@ const CreateShirt: React.FC = () => {
     setIsPurchaseLoading(true)
     try {
         const payload = {
+          purchaseType: 'Shirt',
           image,
           color: color.value,
+
         }
         const hasEmptyValue = Object.values(payload).some(value => value === '');
         if (hasEmptyValue){
@@ -47,7 +49,6 @@ const CreateShirt: React.FC = () => {
   }
 
   const onGenerate = async () => {
-    let prompt = ''
     setIsGenerateCoverImageLoading(true)
     if (prompt === ''){
       alert("Please provide a prompt")
@@ -69,7 +70,7 @@ const CreateShirt: React.FC = () => {
   const onSurpriseMe = async () => {
     setIsSurpriseMeLoading(true);
     try {
-      const response = await axios.post(`${process.env.REACT_APP_API_URL}trackingDetailsEmail`);
+      const response = await axios.get(`${process.env.REACT_APP_API_URL}generateImagePrompt`);
       const prompt = response.data.prompt.replaceAll('"', '');
       setPrompt(prompt);
     } catch (error) {
