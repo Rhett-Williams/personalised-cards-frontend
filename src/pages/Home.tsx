@@ -29,14 +29,6 @@ const Home: React.FC = () => {
         <div className="site-header-inner">
           <div className="brand header-brand">
             <h1 className="m-0">
-              <a href="#">
-                <img
-                  style={{paddingTop: 20}}
-                  className="header-logo-image"
-                  src={Logo}
-                  alt="Logo"
-                />
-              </a>
             </h1>
           </div>
         </div>
