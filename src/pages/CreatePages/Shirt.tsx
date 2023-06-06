@@ -180,7 +180,7 @@ const CreateShirt: React.FC = () => {
         style={{ width: "70%", marginTop: "50px", marginBottom: "50px" }}
         onClick={handlePurchase}
       >
-          <div "button button-primary">
+          <div className="button button-primary">
         {isPurchaseLoading ? (
               <div
                 style={{
