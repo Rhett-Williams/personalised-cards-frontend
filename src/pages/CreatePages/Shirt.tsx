@@ -169,12 +169,18 @@ const CreateShirt: React.FC = () => {
         </button>
       </div>
     </div>
+                <div className="hero-cta">
+                <a className="button button-primary" href="#">
+                  Get Started
+                </a>
+              </div>
       <button
         disabled={isPurchaseLoading}
-        className="generate-button"
+        className="hero-cta"
         style={{ width: "70%", marginTop: "50px", marginBottom: "50px" }}
         onClick={handlePurchase}
       >
+          <div "button button-primary">
         {isPurchaseLoading ? (
               <div
                 style={{
@@ -196,6 +202,7 @@ const CreateShirt: React.FC = () => {
             ) : (
               "Purchase your shirt!"
             )}
+          </div>
       </button>
     </>
   );
