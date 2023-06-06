@@ -18,7 +18,7 @@ const Home: React.FC = () => {
   <meta charSet="utf-8" />
   <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Switch Template</title>
+  <title>Pixel Perfect Delights</title>
   <link
     href="https://fonts.googleapis.com/css?family=Heebo:400,700|IBM+Plex+Sans:600"
     rel="stylesheet"
@@ -47,14 +47,13 @@ const Home: React.FC = () => {
         <div className="container">
           <div className="hero-inner">
             <div className="hero-copy">
-              <h1 className="hero-title mt-0">Landing template for startups</h1>
+              <h1 className="hero-title mt-0">Welcome to Pixel Perfect Delights!</h1>
               <p className="hero-paragraph">
-                Our landing page template works on all devices, so you only have
-                to set it up once, and get beautiful results forever.
+                Indulge in the world of AI-generated images and let your imagination soar. Explore our online store and discover a universe of pixel perfect delights. Whether you're shopping for yourself or searching for a unique gift, our collection will ignite your senses and leave you craving for more.
               </p>
               <div className="hero-cta">
                 <a className="button button-primary" href="#">
-                  Buy it now
+                  Get Started
                 </a>
               </div>
             </div>
@@ -90,10 +89,9 @@ const Home: React.FC = () => {
           <div className="features-inner section-inner has-bottom-divider">
             <div className="features-header text-center">
               <div className="container-sm">
-                <h2 className="section-title mt-0">The Product</h2>
+                <h2 className="section-title mt-0">Our Products</h2>
                 <p className="section-paragraph">
-                  Lorem ipsum is common placeholder text used to demonstrate the
-                  graphic elements of a document or visual presentation.
+                  At Pixel Perfect Delights, we believe that art should be accessible to all. That's why we offer our AI-generated creations at affordable prices, without compromising on quality. We take pride in providing you with top-notch products that are crafted with attention to detail and delivered with care.
                 </p>
                 <div className="features-image">
                   <img
@@ -124,11 +122,9 @@ const Home: React.FC = () => {
                     />
                   </div>
                   <div className="feature-content">
-                    <h3 className="feature-title mt-0">Discover</h3>
+                    <h3 className="feature-title mt-0">Delightfully Simple</h3>
                     <p className="text-sm mb-0">
-                      Lorem ipsum dolor sit amet, consecte adipiscing elit, sed
-                      do eiusmod tempor incididunt ut labore et dolore magna
-                      aliqua dui.
+                      Creating your own custom product is delightfully simple with our intuitive web app. In just a few easy steps, you can bring your vision to life and design a one-of-a-kind masterpiece that perfectly reflects your style and personality.
                     </p>
                   </div>
                 </div>
@@ -142,11 +138,9 @@ const Home: React.FC = () => {
                     />
                   </div>
                   <div className="feature-content">
-                    <h3 className="feature-title mt-0">Discover</h3>
+                    <h3 className="feature-title mt-0">Unique</h3>
                     <p className="text-sm mb-0">
-                      Lorem ipsum dolor sit amet, consecte adipiscing elit, sed
-                      do eiusmod tempor incididunt ut labore et dolore magna
-                      aliqua dui.
+Experience the magic of AI-generated art where every design is a unique masterpiece. With our cutting-edge technology, each creation at Pixel Perfect Delights is one-of-a-kind, ensuring that you own something truly exceptional and extraordinary.
                     </p>
                   </div>
                 </div>
@@ -160,11 +154,9 @@ const Home: React.FC = () => {
                     />
                   </div>
                   <div className="feature-content">
-                    <h3 className="feature-title mt-0">Discover</h3>
+                    <h3 className="feature-title mt-0">No creating accounts</h3>
                     <p className="text-sm mb-0">
-                      Lorem ipsum dolor sit amet, consecte adipiscing elit, sed
-                      do eiusmod tempor incididunt ut labore et dolore magna
-                      aliqua dui.
+                      Say goodbye to lengthy sign-up processes and complicated transactions. At Pixel Perfect Delights, we believe in making your shopping experience hassle-free. With no sign-up required, you can dive right into exploring our incredible collection. Once you've found your perfect AI-generated design, our simple pay-and-receive system ensures a seamless process from checkout to your doorstep. Sit back, relax, and let us take care of the rest, delivering your delightful purchase right to your door.
                     </p>
                   </div>
                 </div>
@@ -177,14 +169,14 @@ const Home: React.FC = () => {
         <div className="container-sm">
           <div className="cta-inner section-inner">
             <div className="cta-header text-center">
-              <h2 className="section-title mt-0">Get it and Switch</h2>
+              <h2 className="section-title mt-0">Get Creative</h2>
               <p className="section-paragraph">
                 Lorem ipsum is common placeholder text used to demonstrate the
                 graphic elements of a document or visual presentation.
               </p>
               <div className="cta-cta">
                 <a className="button button-primary" href="#">
-                  Buy it now
+                  Get Started
                 </a>
               </div>
             </div>
