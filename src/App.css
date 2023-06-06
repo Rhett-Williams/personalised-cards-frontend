@@ -442,8 +442,8 @@ img[src=""] {
    top: 100px;
    height: 250px;
   width: 500px;
-  display: 'flex';
-  justifyContent: 'center'
+  display: flex;
+  justifyContent: center
 }
 
 .shirt-generated-image-inner-div {
@@ -670,8 +670,6 @@ img[src=""] {
    top: 40px;
    height: 200px;
   width: 300px;
-  display: 'flex';
-  justifyContent: 'center'
 }
   .shirt-generated-image-inner-div {
     width: 125px
