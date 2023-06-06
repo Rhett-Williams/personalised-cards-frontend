@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { HexColorPicker } from 'react-colorful';
 import { ThreeDots } from 'react-loader-spinner';
 import defaultImage from '../../assets/defaultImage.png';
-import TShirt from '../../assets/tShirt';
+import TShirt from '../../assets/TShirt';
 import ReactDropdown from 'react-dropdown';
 
 const CreateShirt: React.FC = () => {
