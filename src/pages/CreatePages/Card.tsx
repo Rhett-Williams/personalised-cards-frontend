@@ -74,6 +74,7 @@ const CreateCard: React.FC = () => {
     setIsPurchaseLoading(true)
     try {
         const payload = {
+          productType: 'Card',
           coverImage,
           innerImage,
           innerText,
@@ -87,7 +88,7 @@ const CreateCard: React.FC = () => {
           setIsPurchaseLoading(false)
           return
         }
-        const response = await axios.post(`${process.env.REACT_APP_API_URL}createPaymentLink`, {payload});
+        const response = await axios.post(`${process.env.REACT_APP_API_URL}createPaymentLink`, payload);
         window.open(response.data.paymentLink)
     } catch (error) {
         console.log("error", error)
@@ -111,8 +112,6 @@ const CreateCard: React.FC = () => {
       return
     }
     
-
-    
     try {
       const response = await axios.post(`${process.env.REACT_APP_API_URL}generateImage`, {prompt});
       const { imageUrl } = response.data;
@@ -128,8 +127,8 @@ const CreateCard: React.FC = () => {
       console.error("Error fetching image prompt:", error);
       alert("Error getting image.")
       switch(currentStage){
-        case 'Cover': prompt = coverPrompt; setIsGenerateCoverImageLoading(false); console.log("this go?"); break
-        case 'Inner': prompt = innerPrompt; setIsGenerateInnerImageLoading(false); console.log("this 123123go?"); break
+        case 'Cover': prompt = coverPrompt; setIsGenerateCoverImageLoading(false); break
+        case 'Inner': prompt = innerPrompt; setIsGenerateInnerImageLoading(false); break
     }
     }
   };

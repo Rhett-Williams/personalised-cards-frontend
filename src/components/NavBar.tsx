@@ -7,7 +7,7 @@ const Navbar = () => {
   const [showNavExternal3, setShowNavExternal3] = useState(false);
   return (
     <div className='nav-bar-container'>
-     <a href="/">
+     <a style={{marginLeft: '5%'}} href="/">
       <img
         style={{paddingTop: 20}}
         className="header-logo-image"

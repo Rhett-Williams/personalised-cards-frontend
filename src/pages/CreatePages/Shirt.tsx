@@ -13,6 +13,7 @@ const CreateShirt: React.FC = () => {
   const [prompt, setPrompt] = useState("");
   const [image, setImage] = useState("");
   const [color, setColor] = useState<any>({label: "Navy", value: "white"});
+  const [size, setSize] = useState('Small')
   const [isSurpriseMeLoading, setIsSurpriseMeLoading] = useState(false);
   const [isGenerateCoverImageLoading, setIsGenerateCoverImageLoading] = useState(false);
   const [isPurchaseLoading, setIsPurchaseLoading] = useState(false)
@@ -29,10 +30,10 @@ const CreateShirt: React.FC = () => {
     setIsPurchaseLoading(true)
     try {
         const payload = {
-          purchaseType: 'Shirt',
+          productType: 'Shirt',
           image,
           color: color.value,
-
+          size
         }
         const hasEmptyValue = Object.values(payload).some(value => value === '');
         if (hasEmptyValue){
@@ -40,7 +41,8 @@ const CreateShirt: React.FC = () => {
           setIsPurchaseLoading(false)
           return
         }
-        const response = await axios.post(`${process.env.REACT_APP_API_URL}createPaymentLink`, {payload});
+        console.log("pasd", payload)
+        const response = await axios.post(`${process.env.REACT_APP_API_URL}createPaymentLink`, payload);
         window.open(response.data.paymentLink)
     } catch (error) {
         console.log("error", error)
@@ -92,6 +94,12 @@ const CreateShirt: React.FC = () => {
     {label: "True Royal Triblend", value: "#2f55a4"},
   ]
 
+  const sizeOptions = [
+    'Small',
+    'Medium',
+    'Large'
+  ]
+
   return (
     <>
     <div
@@ -120,6 +128,17 @@ const CreateShirt: React.FC = () => {
           options={colorOptions}
           onChange={(value) => setColor(value)}
           value={color.value}
+          placeholder="Select an option"
+        />
+        </section>
+        <div style={{fontWeight: 'bold', marginBottom: '15px'}}>Shirt Size:</div>
+        <section className="color-picker">
+        <ReactDropdown
+          className="dropdown"
+          arrowClassName="dropdown-option"
+          options={sizeOptions}
+          onChange={(value) => setColor(value.value)}
+          value={size}
           placeholder="Select an option"
         />
         </section>
@@ -158,7 +177,7 @@ const CreateShirt: React.FC = () => {
             <div style={{display: "flex", flexDirection: 'row', justifyContent: 'center'}}>
               <div style={{marginRight: '10px'}}>Generating</div>
               <ThreeDots
-                height="25"
+                height="35"
                 width="15"
                 radius="9"
                 color="orange"

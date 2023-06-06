@@ -11,6 +11,11 @@ import FeatureIllustrationTop from "../assets/switchImages/features-illustration
 import Feature03 from "../assets/switchImages/feature-03-light.svg"
 import Feature02 from "../assets/switchImages/feature-02-light.svg"
 import Feature01 from "../assets/switchImages/feature-01-light.svg"
+import { Carousel } from 'react-responsive-carousel';
+import inspo1 from '../assets/Inspo1.png'
+import inspo2 from '../assets/Inspo2.png'
+import inspo3 from '../assets/Inspo3.png'
+import inspo4 from '../assets/Inspo4.png'
 
 const Home: React.FC = () => {
   return (
@@ -157,17 +162,41 @@ Experience the magic of AI-generated art where every design is a unique masterpi
           </div>
         </div>
       </section>
+        <div className="container-sm" style={{background: 'linear-gradient(to bottom, rgba(83,95,215,0), rgba(83,95,215,0.04))'}}>
+          <div className="cta-inner section-inner" style={{paddingBottom: 0}}>
+            <div className="cta-header text-center" style={{display: 'flex', alignItems: 'center', flexDirection: 'column'}}>
+              <h2 className="section-title mt-0" style={{marginBottom: 30}}>Inspiration:</h2>
+              <Carousel className='home-carousel'>
+                  <div>
+                      <img src={inspo1} />
+                      <p className="legend">Luminous jellyfish dance under a moonlit ocean sky.</p>
+                  </div>
+                  <div>
+                      <img src={inspo2} />
+                      <p className="legend">An underwater adventure with a friendly sea creature, pixel art, 4k</p>
+                  </div>
+                  <div>
+                      <img src={inspo3} />
+                      <p className="legend">pixar 3d render of A treehouse with a secret entrance hidden in the trunk of a large tree.</p>
+                  </div>
+                  <div>
+                      <img src={inspo4} />
+                      <p className="legend">A robot and a dinosaur having a tea party in a futuristic city. vibrant colours, 4k</p>
+                  </div>
+              </Carousel>
+            </div>
+          </div>
+        </div>
       <section className="cta section">
         <div className="container-sm">
           <div className="cta-inner section-inner">
             <div className="cta-header text-center">
               <h2 className="section-title mt-0">Get Creative</h2>
               <p className="section-paragraph">
-                Lorem ipsum is common placeholder text used to demonstrate the
-                graphic elements of a document or visual presentation.
+                Click get started to begin creating something truly unique!
               </p>
               <div className="cta-cta">
-                <a className="button button-primary" href="#">
+                <a className="button button-primary" href="/create">
                   Get Started
                 </a>
               </div>

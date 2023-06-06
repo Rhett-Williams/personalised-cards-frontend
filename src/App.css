@@ -497,7 +497,14 @@ img[src=""] {
   padding-left: 10px;
 }
 
-
+.nav-bar-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  position: fixed;
+  width: 100%;
+  z-index: 10;
+}
 
 .footer {
   background-color: black;
@@ -558,12 +565,6 @@ img[src=""] {
 }
 
 @media(max-width: 1100px){
-  .nav-bar-container{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-   
-  }
   .main-logo-image{
     position: relative;
     left: 0;
