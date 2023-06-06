@@ -171,11 +171,10 @@ const CreateShirt: React.FC = () => {
     </div>
       <button
         disabled={isPurchaseLoading}
-        className="hero-cta"
+        className="button button-primary"
         style={{ marginTop: "50px", marginBottom: "50px" }}
         onClick={handlePurchase}
       >
-          <div className="button button-primary">
         {isPurchaseLoading ? (
               <div
                 style={{
@@ -197,7 +196,6 @@ const CreateShirt: React.FC = () => {
             ) : (
               "Purchase your shirt!"
             )}
-          </div>
       </button>
     </>
   );
