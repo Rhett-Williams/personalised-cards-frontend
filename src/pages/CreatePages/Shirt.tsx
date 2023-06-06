@@ -169,15 +169,10 @@ const CreateShirt: React.FC = () => {
         </button>
       </div>
     </div>
-                <div className="hero-cta">
-                <a className="button button-primary" href="#">
-                  Get Started
-                </a>
-              </div>
       <button
         disabled={isPurchaseLoading}
         className="hero-cta"
-        style={{ width: "70%", marginTop: "50px", marginBottom: "50px" }}
+        style={{ marginTop: "50px", marginBottom: "50px" }}
         onClick={handlePurchase}
       >
           <div className="button button-primary">
