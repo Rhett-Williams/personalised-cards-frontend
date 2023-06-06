@@ -82,22 +82,87 @@ const CreateShirt: React.FC = () => {
   };
 
   const colorOptions = [
-    {label: "Black Triblend", value: "#141615"},
-    {label: "Charcoal Black", value: "#3d3935"},
-    {label: "Green Triblend", value: "#507158"},
-    {label: "Navy", value: "#0d121e"},
-    {label: "Navy Triblend", value: "#474960"},
-    {label: "Olive", value: "#434c31"},
-    {label: "Red", value: "#ff0000"},
-    {label: "Red Triblend", value: "#cb333b"},
-    {label: "True Royal", value: "#1c438c"},
-    {label: "True Royal Triblend", value: "#2f55a4"},
+    {
+      "label": "Army",
+      "value": "#3C4D2F"
+    },
+    {
+      "label": "Asphalt",
+      "value": "#50575C"
+    },
+    {
+      "label": "Black",
+      "value": "#000000"
+    },
+    {
+      "label": "Brown",
+      "value": "#4E3629"
+    },
+    {
+      "label": "Cranberry",
+      "value": "#9D1A35"
+    },
+    {
+      "label": "Gold",
+      "value": "#FFD700"
+    },
+    {
+      "label": "Grass",
+      "value": "#7FB80E"
+    },
+    {
+      "label": "Heather Aubergine",
+      "value": "#473146"
+    },
+    {
+      "label": "Heather Charcoal",
+      "value": "#4D5055"
+    },
+    {
+      "label": "Heather Grey",
+      "value": "#B7B9BD"
+    },
+    {
+      "label": "Light Blue",
+      "value": "#ADD8E6"
+    },
+    {
+      "label": "Navy",
+      "value": "#000080"
+    },
+    {
+      "label": "Orange",
+      "value": "#FFA500"
+    },
+    {
+      "label": "Red",
+      "value": "#FF0000"
+    },
+    {
+      "label": "Royal",
+      "value": "#4169E1"
+    },
+    {
+      "label": "Sand",
+      "value": "#C2B280"
+    },
+    {
+      "label": "Silver",
+      "value": "#C0C0C0"
+    },
+    {
+      "label": "White",
+      "value": "#FFFFFF"
+    }
   ]
 
   const sizeOptions = [
-    'Small',
-    'Medium',
-    'Large'
+    'S',
+    'M',
+    'L',
+    'XL',
+    '2XL',
+    '3XL'
   ]
 
   return (
