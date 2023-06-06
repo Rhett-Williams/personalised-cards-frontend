@@ -99,7 +99,7 @@ const CreateShirt: React.FC = () => {
       style={{marginBottom: 70}}
       onAnimationEnd={() => setIsVisible(false)}
     >
-      <div style={{width: 500, minWidth: 300, height: 500}}>
+      <div className="crete-shirt-svg-container">
         {/* @ts-ignore */}
         <TShirt color={color.value ?? 'white'}/>
           <div style={{position: 'absolute', width: 200, top: 100, height: 250, left: 150}}>
