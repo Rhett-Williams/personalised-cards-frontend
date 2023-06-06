@@ -103,7 +103,7 @@ const CreateShirt: React.FC = () => {
         {/* @ts-ignore */}
         <TShirt color={color.value ?? 'white'}/>
           <div className="shirt-generated-image-container">
-              <div style={{width: 200}}>
+              <div className="shirt-generated-image-inner-div">
                 <img src={image} onLoad={() => setIsGenerateCoverImageLoading(false)} className="shirt-image" />
                 {image === '' && <img src={defaultImage} alt="Overlay Image" className="shirt-image" style={{opacity: 0.6}}/>}
               </div>
