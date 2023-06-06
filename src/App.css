@@ -92,7 +92,7 @@ img[src=""] {
   transition: background-color 0.3s, box-shadow 0.3s, color 0.3s;
 }
 
-.create-shirt-svg-continer {
+.create-shirt-svg-container {
   width: 500px;
   height: 600px;
 }
@@ -649,7 +649,7 @@ img[src=""] {
   .home-carousel {
     width: 200px
   }
-  .create-shirt-svg-continer {
+  .create-shirt-svg-container {
   width: 300px;
   height: 350px;
 }
