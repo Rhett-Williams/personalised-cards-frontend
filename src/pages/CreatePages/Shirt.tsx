@@ -32,7 +32,7 @@ const CreateShirt: React.FC = () => {
         const payload = {
           productType: 'Shirt',
           image,
-          color: color.value,
+          color: color.label,
           size
         }
         const hasEmptyValue = Object.values(payload).some(value => value === '');
@@ -202,7 +202,7 @@ const CreateShirt: React.FC = () => {
           className="dropdown"
           arrowClassName="dropdown-option"
           options={sizeOptions}
-          onChange={(value) => setColor(value.value)}
+          onChange={(value) => setSize(value.value)}
           value={size}
           placeholder="Select an option"
         />
