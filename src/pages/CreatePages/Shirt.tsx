@@ -99,10 +99,10 @@ const CreateShirt: React.FC = () => {
       style={{marginBottom: 70}}
       onAnimationEnd={() => setIsVisible(false)}
     >
-      <div style={{width: 500, minWidth: 300, height: 700}}>
+      <div style={{width: 500, minWidth: 300, height: 500}}>
         {/* @ts-ignore */}
         <TShirt color={color.value ?? 'white'}/>
-          <div style={{position: 'absolute', width: 200, top: 100, height: 250}}>
+          <div style={{position: 'absolute', width: 200, top: 100, height: 250, left: 150}}>
             <img src={image} onLoad={() => setIsGenerateCoverImageLoading(false)} className="shirt-image" />
             {image === '' && <img src={defaultImage} alt="Overlay Image" className="shirt-image" style={{opacity: 0.6}}/>}
           </div>
