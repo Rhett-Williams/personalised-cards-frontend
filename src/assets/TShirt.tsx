@@ -14,7 +14,7 @@ const TShirt = ({color}: Props) => (
         stroke: "#000",
         strokeWidth: "1.0055px",
       // @ts-ignore
-        fill: `${color}`
+        fill: "red"
       }}
 
       transform="translate(.238 -131.81)"
