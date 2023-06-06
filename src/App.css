@@ -443,7 +443,7 @@ img[src=""] {
    height: 250px;
   width: 500px;
   display: flex;
-  justifyContent: center
+  justify-content: center
 }
 
 .shirt-generated-image-inner-div {
@@ -667,7 +667,7 @@ img[src=""] {
   height: 350px;
 }
   .shirt-generated-image-container {
-   top: 40px;
+   top: 70px;
    height: 200px;
   width: 300px;
 }
