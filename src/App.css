@@ -446,7 +446,20 @@ img[src=""] {
   justify-content: center
 }
 
+.phone-case-generated-image-container{
+  position: absolute;
+  top: 30px;
+  height: 440px;
+  width: 500px;
+  display: flex;
+  justify-content: center
+}
+
 .shirt-generated-image-inner-div {
+  width: 250px
+}
+
+.phone-case-generated-image-inner-div {
   width: 250px
 }
 
@@ -672,7 +685,15 @@ img[src=""] {
    height: 175px;
   width: 300px;
 }
+.phone-case-generated-image-container{
+  top: 15px;
+  height: 270px;
+  width: 300px;
+}
   .shirt-generated-image-inner-div {
     width: 125px
+  }
+  .shirt-generated-image-inner-div {
+    width: 140px
   }
 }
