@@ -112,7 +112,7 @@ const CreateShirt: React.FC = () => {
       </div>
 
       <div className="cover-side-options">
-        <div style={{fontWeight: 'bold', marginBottom: '15px'}}>Page colour:</div>
+        <div style={{fontWeight: 'bold', marginBottom: '15px'}}>Shirt colour:</div>
         <section className="color-picker">
         <ReactDropdown
           className="dropdown"
