@@ -7,6 +7,14 @@ const Navbar = () => {
   const [showNavExternal3, setShowNavExternal3] = useState(false);
   return (
     <div className='nav-bar-container'>
+     <a href="/">
+      <img
+        style={{paddingTop: 20}}
+        className="header-logo-image"
+        src={Logo}
+        alt="Logo"
+      />
+    </a>
     <nav className="navbar-mine">
       <ul className="navbar-list">
         <li className="navbar-item">
