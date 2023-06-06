@@ -440,14 +440,14 @@ img[src=""] {
 .shirt-generated-image-container {
   position: absolute;
    top: 100px;
-   height: 250px;
+   height: 300px;
   width: 500px;
   display: flex;
   justify-content: center
 }
 
 .shirt-generated-image-inner-div {
-  width: 200px
+  width: 250px
 }
 
 .Dropdown-menu .Dropdown-option{
@@ -668,7 +668,7 @@ img[src=""] {
 }
   .shirt-generated-image-container {
    top: 70px;
-   height: 200px;
+   height: 175px;
   width: 300px;
 }
   .shirt-generated-image-inner-div {
