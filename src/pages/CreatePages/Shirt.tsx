@@ -99,7 +99,7 @@ const CreateShirt: React.FC = () => {
       style={{marginBottom: 70}}
       onAnimationEnd={() => setIsVisible(false)}
     >
-      <div style={{width: 500, minWidth: 300, display: 'flex', justifyContent: 'center'}}>
+      <div style={{width: 500, minWidth: 300, minHeight: 700, display: 'flex', justifyContent: 'center'}}>
         {/* @ts-ignore */}
         <TShirt color={color.value ?? 'white'}/>
           <div style={{position: 'absolute', width: 200, top: 100, height: 250}}>
