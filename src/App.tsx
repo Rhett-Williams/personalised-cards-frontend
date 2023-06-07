@@ -19,6 +19,7 @@ const App: React.FC = () => {
 
   return (
       <Router>
+      <div style={{width: '100%', height: '5vh'}}/>
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
