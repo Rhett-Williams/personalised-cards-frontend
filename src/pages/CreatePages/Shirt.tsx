@@ -43,9 +43,15 @@ const CreateShirt: React.FC = () => {
         }
         console.log("pasd", payload)
         const response = await axios.post(`${process.env.REACT_APP_API_URL}createPaymentLink`, payload);
-        setTimeout(() => {
+        const isSafariMobile = () => {
+          const userAgent = navigator.userAgent.toLowerCase();
+          return /safari/.test(userAgent) && /mobile/.test(userAgent);
+        };
+        if (isSafariMobile()){
+            window.location.href = response.data.paymentLink
+        } else {
             window.open(response.data.paymentLink)
-        })
+        }
     } catch (error) {
         console.log("error", error)
     }
