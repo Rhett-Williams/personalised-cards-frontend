@@ -9,7 +9,7 @@ const Navbar = () => {
     <div className='nav-bar-container'>
      <a style={{marginLeft: '5%'}} href="/">
       <img
-        style={{paddingTop: 20}}
+        style={{paddingTop: 20, maxWidth: '80vw'}}
         className="header-logo-image"
         src={Logo}
         alt="Logo"
