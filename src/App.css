@@ -650,6 +650,9 @@ img[src=""] {
     display: flex;
     flex-direction: column;
   }
+  .generate-button:hover {
+    background-color: auto;
+  }
 }
 
 @media (max-width: 700px) {
