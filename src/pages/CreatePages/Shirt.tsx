@@ -13,7 +13,7 @@ const CreateShirt: React.FC = () => {
   const [prompt, setPrompt] = useState("");
   const [image, setImage] = useState("");
   const [color, setColor] = useState<any>({label: "Navy", value: "white"});
-  const [size, setSize] = useState('Small')
+  const [size, setSize] = useState('S')
   const [isSurpriseMeLoading, setIsSurpriseMeLoading] = useState(false);
   const [isGenerateCoverImageLoading, setIsGenerateCoverImageLoading] = useState(false);
   const [isPurchaseLoading, setIsPurchaseLoading] = useState(false)
