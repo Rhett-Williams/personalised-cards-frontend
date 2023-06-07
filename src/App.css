@@ -516,6 +516,7 @@ img[src=""] {
   justify-content: space-between;
   position: fixed;
   width: 100%;
+  background-color: #ffa96a;
   z-index: 10;
 }
 
