@@ -49,7 +49,7 @@ const Home: React.FC = () => {
                 Indulge in the world of AI-generated images and let your imagination soar. Explore our online store and discover a universe of pixel perfect delights. Whether you're shopping for yourself or searching for a unique gift, our collection will ignite your senses and leave you craving for more.
               </p>
               <div className="hero-cta">
-                <a className="button button-primary" href="#">
+                <a className="button button-primary" href="/create">
                   Get Started
                 </a>
               </div>
