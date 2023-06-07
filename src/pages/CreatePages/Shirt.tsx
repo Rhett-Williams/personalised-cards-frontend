@@ -43,7 +43,9 @@ const CreateShirt: React.FC = () => {
         }
         console.log("pasd", payload)
         const response = await axios.post(`${process.env.REACT_APP_API_URL}createPaymentLink`, payload);
-        window.open(response.data.paymentLink)
+        setTimeout(() => {
+            window.open(response.data.paymentLink)
+        })
     } catch (error) {
         console.log("error", error)
     }
