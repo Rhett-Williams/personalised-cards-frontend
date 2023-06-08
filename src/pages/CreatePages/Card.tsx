@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import Cover from "../../components/CreateComponents/Cover";
 import Inner from "../../components/CreateComponents/Inner";
-import Side from '../../assets/this.png'
 import axios from "axios";
 import PurchaseButton from "../../components/PurchaseButton";
 
@@ -94,11 +93,6 @@ const CreateCard: React.FC = () => {
   return (
     <
     >
-      <div style={{position: 'absolute', left: 0, width: '100%', overflow: 'hidden', zIndex: -1}}>
-      <img style={{ objectFit:'revert'}} src={Side}/>
-      </div>
-
-      <img className="side-image-removing" src={Side}/>
       <div
         className="create-page-headers"
       >

@@ -4,6 +4,7 @@ import CreateCard from "./CreatePages/Card";
 import CreatePhoneCase from "./CreatePages/PhoneCase";
 import CreateShirt from "./CreatePages/Shirt";
 import { options } from "../constants/Arrays";
+import Side from "../assets/this.png";
 
 const Create: React.FC = () => {
   const [selectedOption, setSelectedOption] = useState("none");
@@ -34,17 +35,18 @@ const Create: React.FC = () => {
             justifyContent: "space-between",
           }}
         >
-        {options.map((option, index) => {
+          {options.map((option, index) => {
             return (
               <CreateDisplayWindow
                 name={option.name}
                 image={option.image}
                 onClick={() => setSelectedOption(option.id)}
-                style={{animation: `fadeIn 1s ease-in-out forwards ${index*500}ms`}}
+                style={{
+                  animation: `fadeIn 1s ease-in-out forwards ${index * 500}ms`,
+                }}
               />
             );
-          }
-        )}
+          })}
         </div>
         <div
           style={{
@@ -80,14 +82,35 @@ const Create: React.FC = () => {
         href="https://fonts.googleapis.com/css?family=Heebo:400,700|IBM+Plex+Sans:600"
         rel="stylesheet"
       />
+      <div
+        style={{
+          position: "absolute",
+          left: 0,
+          width: "100%",
+          overflow: "hidden",
+          zIndex: -1,
+        }}
+      >
+        <img style={{ objectFit: "revert" }} src={Side} />
+      </div>
+
+      <img className="side-image-removing" src={Side} />
       {renderOptions()}
 
       {selectedOption !== "none" && (
-        <div
-          style={{ cursor: "pointer" }}
-          onClick={() => setSelectedOption("none")}
-        >
-          {"<< Back"}
+        <div style={{ width: "100%", height: 30 }}>
+          <div
+            style={{
+              cursor: "pointer",
+              position: "absolute",
+              left: "30%",
+              fontFamily: "IBM Plex Sans",
+              fontWeight: "bold",
+            }}
+            onClick={() => setSelectedOption("none")}
+          >
+            {"<< Back"}
+          </div>
         </div>
       )}
       {renderCreateOption()}
