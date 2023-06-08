@@ -44,17 +44,14 @@ img[src=""] {
 .navbar{
   border-radius: 0px 0px 0px 20px;
 }
+
 .navbar-mine {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 6vh;
-  background-color: #ffa96a;
   right: 200px;
   /* width: 30%; */
-  padding-left: 70px;
-  padding-right: 70px;
-  border-radius: 0px 0px 70px 70px;
+  height: 7vh;
   position: absolute;
   z-index: 1000;
 }
@@ -190,7 +187,7 @@ img[src=""] {
   align-items: center;
   margin: 0 auto;
   padding-top: 100px;
-  min-height: 100vh;
+  min-height: 70vh;
 }
 
 .create-page-headers {
@@ -208,6 +205,16 @@ img[src=""] {
   height: 300px;
   cursor: pointer;
   margin-bottom: 10px;
+  opacity: 0; /* Set initial opacity to 0 */ /* Apply fade-in animation */
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0; /* Start with opacity 0 */
+  }
+  100% {
+    opacity: 1; /* Reach full opacity at the end */
+  }
 }
 
 .display-window-image-container {
@@ -477,17 +484,38 @@ img[src=""] {
 }
 
 .navbar-text {
-  font-size: 70px;
+  font-size: 30px;
   font-weight: 400;
-  font-family: Alexander;
-  color:white;
+  font-family: IBM Plex Sans;
+  background: linear-gradient(to right, #f8db5f, #6EEDFA);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   text-decoration: none;
-  transition: color 0.3s ease, background-position 0.3s ease;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.navbar-text::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(to right, #6EEDFA, #f8db5f);
+  transform: scaleX(0);
+  transition: transform 0.3s ease ;
 }
 
 .navbar-text:hover {
-  color: black;
-  background-position: 100% 50%;
+  background-position: right;
+  background: linear-gradient(to left, #f8db5f, #6EEDFA);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.navbar-text:hover::before {
+  transform: scaleX(1);
 }
 
 .color-picker .react-colorful{

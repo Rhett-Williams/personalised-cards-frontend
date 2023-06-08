@@ -1,16 +1,15 @@
 import React, { useEffect, useState } from "react";
 import PictureOverlay from "../PictureOverlayCover";
-import { ThreeDots } from "react-loader-spinner";
-import { HexColorPicker } from "react-colorful";
+import GenerateButton from "../GenerateButton";
+import PromptInputWithSurpriseMe from "../PromptInputWithSurpriseMe";
 
 type Props = {
   prompt: string;
   setPrompt: (value: string) => void;
-  onGenerate: () => void;
+  onSetCoverImage: (url: string) => void
   coverImage: string;
-  handleSurpriseMe: () => void;
-  isSurpriseMeLoading: boolean;
   isGenerateImageLoading: boolean
+  setIsGenerateImageLoading: (isLoading: boolean) => void
   onNextPress: () => void
   coverColor: string
   setCoverColor: (colour: string) => void
@@ -20,11 +19,10 @@ type Props = {
 const Cover: React.FC<Props> = ({
   prompt,
   setPrompt,
-  onGenerate,
+  onSetCoverImage,
   coverImage,
-  handleSurpriseMe,
-  isSurpriseMeLoading,
   isGenerateImageLoading,
+  setIsGenerateImageLoading,
   onNextPress,
   coverColor,
   setCoverColor,
@@ -48,48 +46,8 @@ const Cover: React.FC<Props> = ({
 
       <PictureOverlay image={coverImage} backgroundColor={coverColor} onLoad={onLoad}/>
       <div className="cover-form-container">
-        <div className="cover-form-prompt">
-          <span >Image prompt:</span>
-          <button
-            disabled={isSurpriseMeLoading}
-            className="cover-form-surprise-button"
-            onClick={handleSurpriseMe}
-          >
-            Surprise Me
-          </button>
-          {isSurpriseMeLoading && (
-            <ThreeDots
-              height="20"
-              width="20"
-              radius="9"
-              color="orange"
-              ariaLabel="three-dots-loading"
-              visible={true}
-            />
-          )}
-        </div>
-        <input
-          type="text"
-          className="text-input"
-          placeholder="Example: A dinosaur sitting on a mountain watching the sunset"
-          value={prompt}
-          onChange={(e) => setPrompt(e.target.value)}
-        />
-        <div style={{fontSize: 12, marginTop: 10}}><div style={{fontWeight: 'bold'}}>Hint:</div> For the best results, trying being specific with the resolution or adding an art style. E.g: Pixar 3D render, 4k</div>
-        <button className="generate-button" onClick={onGenerate} disabled={isGenerateImageLoading}>
-          {isGenerateImageLoading ? (
-            <div style={{display: "flex", flexDirection: 'row', justifyContent: 'center'}}>
-              <div style={{marginRight: '10px'}}>Generating</div>
-              <ThreeDots
-                height="25"
-                width="15"
-                radius="9"
-                color="orange"
-                ariaLabel="three-dots-loading"
-                visible={true}
-              />
-            </div>):'Generate'}
-        </button>
+        <PromptInputWithSurpriseMe title="Image prompt:" prompt={prompt} setPrompt={setPrompt}/>
+        <GenerateButton type='image' prompt={prompt} onGenerated={onSetCoverImage} isGenerateLoading={isGenerateImageLoading} setIsGenerateLoading={setIsGenerateImageLoading}/>
       </div>
       <div
           className="create-button"

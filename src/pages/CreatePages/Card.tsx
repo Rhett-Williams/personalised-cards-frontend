@@ -3,7 +3,7 @@ import Cover from "../../components/CreateComponents/Cover";
 import Inner from "../../components/CreateComponents/Inner";
 import Side from '../../assets/this.png'
 import axios from "axios";
-import { ThreeDots } from "react-loader-spinner";
+import PurchaseButton from "../../components/PurchaseButton";
 
 const CreateCard: React.FC = () => {
   const [currentStage, setCurrentStage] = useState<
@@ -17,12 +17,10 @@ const CreateCard: React.FC = () => {
   const [coverColour, setCoverColour] = useState('#ffffff')
   const [font, setFont] = useState('Roboto')
   const [fontColor, setFontColor] = useState('#000000')
-  const [isSurpriseMeLoading, setIsSurpriseMeLoading] = useState(false);
   const [isGenerateCoverImageLoading, setIsGenerateCoverImageLoading] = useState(false);
   const [isGenerateInnerImageLoading, setIsGenerateInnerImageLoading] = useState(false);
   const [isPoemSurpriseMeLoading, setIsPoemSurpriseMeLoading] = useState(false);
   const [isGeneratePoemLoading, setIsGeneratePoemLoading] = useState(false);
-  const [isPurchaseLoading, setIsPurchaseLoading] = useState(false)
 
   const renderStage = () => {
     switch (currentStage) {
@@ -31,10 +29,9 @@ const CreateCard: React.FC = () => {
           <Cover
             onLoad={() => setIsGenerateCoverImageLoading(false)}
             onNextPress={() => setCurrentStage('Inner')}
-            onGenerate={onGenerate}
-            handleSurpriseMe={onSurpriseMe}
-            isSurpriseMeLoading={isSurpriseMeLoading}
+            onSetCoverImage={setConverImage}
             isGenerateImageLoading={isGenerateCoverImageLoading}
+            setIsGenerateImageLoading={setIsGenerateCoverImageLoading}
             prompt={coverPrompt}
             setPrompt={setCoverPrompt}
             coverImage={coverImage}
@@ -47,10 +44,9 @@ const CreateCard: React.FC = () => {
           <Inner
             onLoad={() => setIsGenerateInnerImageLoading(false)}
             onBackPress={() => setCurrentStage('Cover')}
-            onGenerate={onGenerate}
-            handleSurpriseMe={onSurpriseMe}
-            isSurpriseMeLoading={isSurpriseMeLoading}
+            onSetInnerImage={setInnerImage}
             innerImage={innerImage}
+            setIsGenerateImageLoading={setIsGenerateInnerImageLoading}
             innerText={innerText}
             setInnerText={setInnerText}
             setInnerImagePrompt={setInnerPrompt}
@@ -68,88 +64,6 @@ const CreateCard: React.FC = () => {
           />
         );
     }
-  };
-
-  const handlePurchase = async () => {
-    setIsPurchaseLoading(true)
-    try {
-        const payload = {
-          productType: 'Card',
-          coverImage,
-          innerImage,
-          innerText,
-          coverColour,
-          font,
-          fontColor
-        }
-        const hasEmptyValue = Object.values(payload).some(value => value === '');
-        if (hasEmptyValue){
-          alert("Please fill out all fields")
-          setIsPurchaseLoading(false)
-          return
-        }
-        const response = await axios.post(`${process.env.REACT_APP_API_URL}createPaymentLink`, payload);
-        window.open(response.data.paymentLink)
-    } catch (error) {
-        console.log("error", error)
-    }
-    setIsPurchaseLoading(false)
-  }
-
-  const onGenerate = async () => {
-    let prompt = ''
-
-    switch(currentStage){
-      case 'Cover': prompt = coverPrompt; setIsGenerateCoverImageLoading(true); break
-      case 'Inner': prompt = innerPrompt; setIsGenerateInnerImageLoading(true); break
-  }
-    if (prompt === ''){
-      alert("Please provide a prompt")
-      switch(currentStage){
-        case 'Cover': prompt = coverPrompt; setIsGenerateCoverImageLoading(false); break
-        case 'Inner': prompt = innerPrompt; setIsGenerateInnerImageLoading(false); break
-    }
-      return
-    }
-    
-    try {
-      const response = await axios.post(`${process.env.REACT_APP_API_URL}generateImage`, {prompt});
-      const { imageUrl } = response.data;
-      switch (currentStage) {
-        case "Cover":
-          setConverImage(imageUrl);
-          break;
-        case "Inner":
-          setInnerImage(imageUrl);
-          break;
-      }
-    } catch (error) {
-      console.error("Error fetching image prompt:", error);
-      alert("Error getting image.")
-      switch(currentStage){
-        case 'Cover': prompt = coverPrompt; setIsGenerateCoverImageLoading(false); break
-        case 'Inner': prompt = innerPrompt; setIsGenerateInnerImageLoading(false); break
-    }
-    }
-  };
-
-  const onSurpriseMe = async () => {
-    setIsSurpriseMeLoading(true);
-    try {
-      const response = await axios.get(`${process.env.REACT_APP_API_URL}generateImagePrompt`);
-      const prompt = response.data.prompt.replaceAll('"', '');
-      switch (currentStage) {
-        case "Cover":
-          setCoverPrompt(prompt);
-          break;
-        case "Inner":
-          setInnerPrompt(prompt);
-          break;
-      }
-    } catch (error) {
-      console.error("Error fetching image prompt:", error);
-    }
-    setIsSurpriseMeLoading(false);
   };
 
   const onPoemSurpriseMe = async () => {
@@ -210,34 +124,18 @@ const CreateCard: React.FC = () => {
         </div>
       </div>
       {renderStage()}
-      <button
-        disabled={isPurchaseLoading}
-        className="generate-button"
-        style={{ width: "70%", marginTop: "50px", marginBottom: "50px" }}
-        onClick={handlePurchase}
-      >
-        {isPurchaseLoading ? (
-              <div
-                style={{
-                  display: "flex",
-                  flexDirection: "row",
-                  justifyContent: "center",
-                }}
-              >
-                <div style={{ marginRight: "10px" }}>Purchase your card!</div>
-                <ThreeDots
-                  height="25"
-                  width="15"
-                  radius="9"
-                  color="orange"
-                  ariaLabel="three-dots-loading"
-                  visible={true}
-                />
-              </div>
-            ) : (
-              "Purchase your card!"
-            )}
-      </button>
+          <PurchaseButton
+            title="Purchase your card!"
+            payload={{
+              productType: 'Card',
+              coverImage,
+              innerImage,
+              innerText,
+              coverColour,
+              font,
+              fontColor
+            }}
+            />
     </>
   );
 };

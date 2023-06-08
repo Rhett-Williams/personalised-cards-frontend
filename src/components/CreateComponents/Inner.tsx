@@ -3,13 +3,15 @@ import PictureOverlayInner from "../PictureOverlayInner";
 import ReactDropdown from "react-dropdown";
 import { ThreeDots } from "react-loader-spinner";
 import { HexColorPicker } from "react-colorful";
+import GenerateButton from "../GenerateButton";
+import PromptInputWithSurpriseMe from "../PromptInputWithSurpriseMe";
+import { eventOptions, fontOptions, genderOptions, themeOptions } from "../../constants/Arrays";
 
 type Props = {
   innerImage: string;
+  onSetInnerImage: (url: string) => void
   innerText: string;
   setInnerText: (value: string) => void;
-  onGenerate: () => void;
-  handleSurpriseMe: () => void;
   handlePoemSurpriseMe: () => void;
   handleGeneratePoem: (
     age: string,
@@ -19,8 +21,8 @@ type Props = {
   ) => void;
   innerImagePrompt: string;
   setInnerImagePrompt: (value: string) => void;
-  isSurpriseMeLoading: boolean;
   isGenerateImageLoading: boolean;
+  setIsGenerateImageLoading: (isLoading: boolean) => void;
   isPoemSurpriseMeLoading: boolean;
   isGeneratingPoem: boolean;
   onBackPress: () => void
@@ -34,16 +36,15 @@ type Props = {
 
 const Inner: React.FC<Props> = ({
   innerImage,
+  onSetInnerImage,
   innerText,
   setInnerText,
-  onGenerate,
-  handleSurpriseMe,
   handlePoemSurpriseMe,
   handleGeneratePoem,
   innerImagePrompt,
   setInnerImagePrompt,
-  isSurpriseMeLoading,
   isGenerateImageLoading,
+  setIsGenerateImageLoading,
   isPoemSurpriseMeLoading,
   isGeneratingPoem,
   onBackPress,
@@ -73,21 +74,6 @@ const Inner: React.FC<Props> = ({
       setIsVisible(false);
     };
   }, []);
-
-  const genderOptions = ["Boy", "Girl", "Wife & Husband", "Other"];
-
-  const eventOptions = [
-    "Birthday",
-    "Wedding",
-    "Christmas",
-    "Valentines Day",
-    "Mothers Day",
-    "Other",
-  ];
-
-  const themeOptions = ["Dinosaurs", "Love", "Snowy", "Cute", "Wine", "Other"];
-
-  const fontOptions = ["Sarah", "Charlie", "Lauren", "Alexander", "Roboto"];
 
   const validateForm = () => {
     console.log(option);
@@ -148,58 +134,10 @@ const Inner: React.FC<Props> = ({
         <div>{fontColor}</div>
       </div>
       <div className="inner-form-container">
+
         <div className="inner-form-sub-container">
-          <div className="cover-form-prompt">
-            <span>Image prompt:</span>
-            <button
-              disabled={isSurpriseMeLoading}
-              className="cover-form-surprise-button"
-              onClick={handleSurpriseMe}
-            >
-              Surprise Me
-            </button>
-            {isSurpriseMeLoading && (
-              <ThreeDots
-                height="20"
-                width="20"
-                radius="9"
-                color="orange"
-                ariaLabel="three-dots-loading"
-                visible={true}
-              />
-            )}
-          </div>
-          <input
-            type="text"
-            placeholder="Example: A dinosaur sitting on a mountain watching the sunset"
-            className="text-input"
-            value={innerImagePrompt}
-            onChange={(e) => setInnerImagePrompt(e.target.value)}
-          />
-          <div style={{fontSize: 12, marginTop: 10}}><div style={{fontWeight: 'bold'}}>Hint:</div> For the best results, trying being specific with the resolution or adding an art style. E.g: Pixar 3D render, 4k</div>
-          <button className="generate-button" onClick={onGenerate} disabled={isGenerateImageLoading}>
-            {isGenerateImageLoading ? (
-              <div
-                style={{
-                  display: "flex",
-                  flexDirection: "row",
-                  justifyContent: "center",
-                }}
-              >
-                <div style={{ marginRight: "10px" }}>Generating</div>
-                <ThreeDots
-                  height="25"
-                  width="15"
-                  radius="9"
-                  color="orange"
-                  ariaLabel="three-dots-loading"
-                  visible={true}
-                />
-              </div>
-            ) : (
-              "Generate"
-            )}
-          </button>
+          <PromptInputWithSurpriseMe title="Image prompt:" prompt={innerImagePrompt} setPrompt={setInnerImagePrompt}/>
+          <GenerateButton type='image' prompt={innerImagePrompt} onGenerated={onSetInnerImage} isGenerateLoading={isGenerateImageLoading} setIsGenerateLoading={setIsGenerateImageLoading}/>
         </div>
         <div className="inner-form-sub-container">
           <div className="cover-form-prompt" style={{ marginBottom: "10px" }}>
@@ -285,29 +223,7 @@ const Inner: React.FC<Props> = ({
               onChange={(e) => setInputs({ ...option, theme: e.target.value })}
             />
           )}
-          <button className="generate-button" onClick={validateForm} disabled={isGeneratingPoem}>
-            {isGeneratingPoem ? (
-              <div
-                style={{
-                  display: "flex",
-                  flexDirection: "row",
-                  justifyContent: "center",
-                }}
-              >
-                <div style={{ marginRight: "10px" }}>Generating</div>
-                <ThreeDots
-                  height="25"
-                  width="15"
-                  radius="9"
-                  color="orange"
-                  ariaLabel="three-dots-loading"
-                  visible={true}
-                />
-              </div>
-            ) : (
-              "Generate"
-            )}
-          </button>
+          <GenerateButton type='poem' prompt={innerImagePrompt} onGenerated={(e) => validateForm()} isGenerateLoading={isGeneratingPoem} setIsGenerateLoading={() => null}/>
         </div>
       </div>
       <div
