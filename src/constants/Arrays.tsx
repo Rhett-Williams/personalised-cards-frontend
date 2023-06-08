@@ -21,6 +21,7 @@ import iphonex from '../assets/iphones/iphonex.svg'
 import giftCardImage from '../assets/giftcard.png'
 import phoneCaseImage from '../assets/phonecase.png'
 import tShirtImage from '../assets/t-shirt.png'
+import Iphone14 from '../assets/iphones/Iphone14'
 
 export const options = [
   {
@@ -124,11 +125,11 @@ export const sizeOptions = [
     '3XL'
   ]
 
-  export   const phoneOptions = [
+  export const phoneOptions = [
     {
       label: "iPhone 14 Pro",
       value: "GLOBAL-TECH-IP14PR-TCB-CS-G",
-      image: iphone14pro
+      // image: <Iphone14 backgroundImage={}/>
     },
     {
       label: "iPhone 14 Pro Max",
