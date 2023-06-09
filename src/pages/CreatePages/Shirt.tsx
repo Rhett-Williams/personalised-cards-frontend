@@ -15,7 +15,7 @@ const CreateShirt: React.FC = () => {
   const [color, setColor] = useState<any>({label: "White", value: "#FFFFFF"});
   const [colorOptions, setColorOptions] = useState(gildan6400ColorOptions)
   const [size, setSize] = useState('S')
-  const [style, setStyle] = useState('Unisex Softstyle T-Shirt')
+  const [style, setStyle] = useState(shirtSyles[0])
   const [isGenerateCoverImageLoading, setIsGenerateCoverImageLoading] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
   const [sizeArray, setSizeArray] = useState(sizeOptions)
@@ -124,7 +124,8 @@ const CreateShirt: React.FC = () => {
         productType: 'Shirt',
         image,
         color: color.label,
-        size
+        size,
+        style
       }}
       />
     </>

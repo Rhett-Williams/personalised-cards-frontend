@@ -36,7 +36,7 @@ const CreatePhoneCase: React.FC = () => {
     >
       <div style={{height: 'auto', marginBottom: 500, width: 500}}>
         {/* @ts-ignore */}
-        <PhoneUtil image={image !== '' ? image : defaultImage} label={phone.label}/>
+        <PhoneUtil onLoad={setIsGenerateCoverImageLoading(false)} image={image !== '' ? image : defaultImage} label={phone.label}/>
       </div>
       <div className="cover-side-options">
         <div style={{fontWeight: 'bold', marginBottom: '15px'}}>Choose phone type:</div>
@@ -78,7 +78,8 @@ const CreatePhoneCase: React.FC = () => {
       payload={{
         productType: 'PhoneCase',
         image,
-        phone
+        phoneType: phone.label,
+        finish
       }}
       />
     </>
