@@ -140,7 +140,7 @@ const Inner: React.FC<Props> = ({
           <GenerateButton type='image' prompt={innerImagePrompt} onGenerated={onSetInnerImage} isGenerateLoading={isGenerateImageLoading} setIsGenerateLoading={setIsGenerateImageLoading}/>
         </div>
         <div className="inner-form-sub-container">
-          <div className="cover-form-prompt" style={{ marginBottom: "10px" }}>
+          <div className="cover-form-prompt" style={{ marginBottom: "10px", backgroundColor: 'white', padding: 5, borderRadius: 10 }}>
             <span>Poem prompt:</span>
             <button
               disabled={isPoemSurpriseMeLoading}

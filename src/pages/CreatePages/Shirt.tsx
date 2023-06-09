@@ -73,7 +73,7 @@ const CreateShirt: React.FC = () => {
       </div>
 
       <div className="cover-side-options">
-        <div style={{fontWeight: 'bold', marginBottom: '15px'}}>Colour:</div>
+        <div style={{fontWeight: 'bold', marginBottom: '15px', backgroundColor: 'white', padding: 5, borderRadius: 10}}>Colour:</div>
         <section className="color-picker">
         <ReactDropdown
           className="dropdown"
@@ -84,7 +84,7 @@ const CreateShirt: React.FC = () => {
           placeholder="Select an option"
         />
         </section>
-        <div style={{fontWeight: 'bold', marginBottom: '15px'}}>Size:</div>
+        <div style={{fontWeight: 'bold', marginBottom: '15px', backgroundColor: 'white', padding: 5, borderRadius: 10}}>Size:</div>
         <section className="color-picker">
         <ReactDropdown
           className="dropdown"
@@ -95,7 +95,7 @@ const CreateShirt: React.FC = () => {
           placeholder="Select an option"
         />
         </section>
-        <div style={{fontWeight: 'bold', marginBottom: '15px'}}>Style:</div>
+        <div style={{fontWeight: 'bold', marginBottom: '15px', backgroundColor: 'white', padding: 5, borderRadius: 10}}>Style:</div>
         <section className="color-picker">
         <ReactDropdown
           className="dropdown"

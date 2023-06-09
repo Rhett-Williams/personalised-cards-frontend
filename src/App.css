@@ -441,7 +441,9 @@ img[src=""] {
 }
 
 .poem-dropdown-description {
- 
+  background-color: white;
+  padding: 5;
+  border-radius: 10px
 }
 
 .shirt-generated-image-container {
@@ -703,15 +705,19 @@ img[src=""] {
     padding-left: 20px;
     border-radius: 0px 0px 0px 20px;
   }
+
   .side-image-removing {
     display: none;
   }
+
   .home-carousel {
     width: 200px
   }
+
   .create-shirt-svg-container {
-  width: 300px;
-  height: 350px;
+    width: 300px;
+    height: 350px;
+    transform: translate(-55px, -80px) scale(0.6)
 }
   .shirt-generated-image-container {
    top: 70px;

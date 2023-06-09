@@ -34,12 +34,15 @@ const CreatePhoneCase: React.FC = () => {
       style={{marginBottom: 70}}
       onAnimationEnd={() => setIsVisible(false)}
     >
-      <div style={{height: 'auto', marginBottom: 500, width: 500}}>
+      <div style={{height: 500, width: 100}}>
         {/* @ts-ignore */}
+        <div style={{transform: 'translate(-210px, 0px)'}}>
         <PhoneUtil onLoad={() => setIsGenerateCoverImageLoading(false)} image={image !== '' ? image : defaultImage} label={phone.label}/>
+        </div>
+
       </div>
       <div className="cover-side-options">
-        <div style={{fontWeight: 'bold', marginBottom: '15px'}}>Choose phone type:</div>
+        <div style={{fontWeight: 'bold', marginBottom: '15px', backgroundColor: 'white', padding: 5, borderRadius: 10}}>Choose phone type:</div>
         <section className="color-picker">
         <ReactDropdown
           className="dropdown"
@@ -50,7 +53,7 @@ const CreatePhoneCase: React.FC = () => {
           placeholder="Select an option"
         />
         </section>
-        <div style={{fontWeight: 'bold', marginBottom: '15px'}}>Finish:</div>
+        <div style={{fontWeight: 'bold', marginBottom: '15px', backgroundColor: 'white', padding: 5, borderRadius: 10}}>Finish:</div>
         <section className="color-picker">
           <ReactDropdown
             className="dropdown"

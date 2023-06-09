@@ -27,7 +27,7 @@ const PromptInputWithSurpriseMe = ({ prompt, setPrompt, title }: Props) => {
 
   return (
     <>
-      <div className="cover-form-prompt">
+      <div className="cover-form-prompt" style={{backgroundColor: 'white', padding: 5, borderRadius: 10}}>
         <span>{title}</span>
         <button
           disabled={isSurpriseMeLoading}
@@ -54,7 +54,7 @@ const PromptInputWithSurpriseMe = ({ prompt, setPrompt, title }: Props) => {
         value={prompt}
         onChange={(e) => setPrompt(e.target.value)}
       />
-      <div style={{ fontSize: 12, marginTop: 10 }}>
+      <div style={{ fontSize: 12, marginTop: 10, backgroundColor: 'white', padding: 5, borderRadius: 10}}>
         <div style={{ fontWeight: "bold" }}>Hint:</div> For the best results,
         trying being specific with the resolution or adding an art style. E.g:
         Pixar 3D render, 4k
