@@ -23,51 +23,52 @@ import Iphonex from '../assets/iphones/Iphonex'
 type Props = {
     label: string
     image: string
+    onLoad: () => void
 }
 
-const PhoneUtil = ({label, image}: Props) => {
+const PhoneUtil = ({label, image, onLoad}: Props) => {
     const getPhoneBackground = () => {
         switch (label) {
             case 'iPhone 14 Pro':
-                return <Iphone14Pro backgroundImage={image}/>;
+                return <Iphone14Pro onLoad={onLoad} backgroundImage={image}/>;
             case 'iPhone 14 Pro Max':
-              return <Iphone14ProMax backgroundImage={image}/>;
+              return <Iphone14ProMax onLoad={onLoad} backgroundImage={image}/>;
             case 'iPhone 14':
-              return <Iphone14 backgroundImage={image}/>;
+              return <Iphone14 onLoad={onLoad} backgroundImage={image}/>;
             case 'iPhone 14 Plus':
-              return <Iphone14plus backgroundImage={image}/>;
+              return <Iphone14plus onLoad={onLoad} backgroundImage={image}/>;
             case 'iPhone 13 Pro':
-              return <Iphone13pro backgroundImage={image}/>;
+              return <Iphone13pro onLoad={onLoad} backgroundImage={image}/>;
             case 'iPhone 13 Pro Max':
-              return <Iphone13promax backgroundImage={image}/>;
+              return <Iphone13promax onLoad={onLoad} backgroundImage={image}/>;
             case 'iPhone 13':
-              return <Iphone13 backgroundImage={image} />;
+              return <Iphone13 onLoad={onLoad} backgroundImage={image} />;
             case 'iPhone 13 Mini':
-              return <Iphone13mini backgroundImage={image} />;
+              return <Iphone13mini onLoad={onLoad} backgroundImage={image} />;
             case 'iPhone 12 Pro':
-              return <Iphone12pro backgroundImage={image}/>;
+              return <Iphone12pro onLoad={onLoad} backgroundImage={image}/>;
             case 'iPhone 12 Pro Max':
-              return <Iphone12promax backgroundImage={image} />;
+              return <Iphone12promax onLoad={onLoad} backgroundImage={image} />;
             case 'iPhone 12':
-              return <Iphone12 backgroundImage={image}/>;
+              return <Iphone12 onLoad={onLoad} backgroundImage={image}/>;
             case 'iPhone 12 Mini':
-              return <Iphone12mini backgroundImage={image}/>;
+              return <Iphone12mini onLoad={onLoad} backgroundImage={image}/>;
             case 'iPhone SE (2020)':
-              return <Iphonese2020 backgroundImage={image}/>;
+              return <Iphonese2020 onLoad={onLoad} backgroundImage={image}/>;
             case 'iPhone 11 Pro':
-              return <Iphone11Pro backgroundImage={image}/>;
+              return <Iphone11Pro onLoad={onLoad} backgroundImage={image}/>;
             case 'iPhone 11 Pro Max':
-              return <Iphone11promax backgroundImage={image}/>;
+              return <Iphone11promax onLoad={onLoad} backgroundImage={image}/>;
             case 'iPhone 11':
-              return <Iphone11 backgroundImage={image}/>;
+              return <Iphone11 onLoad={onLoad} backgroundImage={image}/>;
             case 'iPhone XR':
-              return <Iphonexr backgroundImage={image}/>;
+              return <Iphonexr onLoad={onLoad} backgroundImage={image}/>;
             case 'iPhone XS':
-              return <Iphonexs backgroundImage={image}/>;
+              return <Iphonexs onLoad={onLoad} backgroundImage={image}/>;
             case 'iPhone XS Max':
-              return <Iphonexsmax backgroundImage={image}/>;
+              return <Iphonexsmax onLoad={onLoad} backgroundImage={image}/>;
             case 'iPhone X':
-              return <Iphonex backgroundImage={image}/>;
+              return <Iphonex onLoad={onLoad} backgroundImage={image}/>;
             default:
               return null;
           }
