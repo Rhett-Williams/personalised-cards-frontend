@@ -3,8 +3,9 @@ import * as React from "react";
 type Props = {
   color: string;
   image: string;
+  onLoad: () => void
 };
-const Delta97100 = ({ color, image }: Props) => (
+const Delta97100 = ({ color, image, onLoad }: Props) => (
   //@ts-ignore
   <div
     style={{ transform: "scale(0.4)", height: 0, width: 0, marginLeft: -50 }}
@@ -27,6 +28,7 @@ const Delta97100 = ({ color, image }: Props) => (
             width="1100"
             height="1100"
             style={{ transform: "translate(350px, 210px) scale(0.7)" }}
+            onLoad={onLoad}
           />
         </pattern>
       </defs>

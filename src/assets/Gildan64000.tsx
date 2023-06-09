@@ -3,8 +3,10 @@ import * as React from "react"
 type Props = {
   color: string
   image: string
+  onLoad: () => void
 }
-const Gildan64000 = ({color, image}: Props) => (
+
+const Gildan64000 = ({color, image, onLoad}: Props) => (
   //@ts-ignore
   <div style={{transform: 'scale(0.4)', height: 0, width: 0, marginLeft: -50}}>
 <svg
@@ -15,7 +17,7 @@ const Gildan64000 = ({color, image}: Props) => (
   >
       <defs>
           <pattern id="myPattern" patternUnits="userSpaceOnUse" width="1100" height="1100">
-              <image xlinkHref={image} width="1100" height="1100" style={{ transform: 'translate(350px, 240px) scale(0.73)' }} />
+              <image onLoad={onLoad} xlinkHref={image} width="1100" height="1100" style={{ transform: 'translate(350px, 240px) scale(0.73)' }} />
           </pattern>
       </defs>
     <path
