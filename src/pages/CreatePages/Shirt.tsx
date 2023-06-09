@@ -6,6 +6,8 @@ import GenerateButton from '../../components/GenerateButton';
 import { colorOptions, shirtSyles, sizeOptions } from '../../constants/Arrays';
 import PurchaseButton from '../../components/PurchaseButton';
 import PromptInputWithSurpriseMe from '../../components/PromptInputWithSurpriseMe';
+import Delta97100 from '../../assets/Delta97100';
+import Gildan64v00 from '../../assets/Gildan64v00';
 
 const CreateShirt: React.FC = () => {
   const [prompt, setPrompt] = useState("");
@@ -23,6 +25,14 @@ const CreateShirt: React.FC = () => {
     };
   }, []);
 
+  const getShirtStyle = () => {
+    switch(style){
+      case 'Unisex Softstyle T-Shirt': return <Gildan64000 color={color.value ?? 'white'} image={image !== '' ? image : defaultImage}/>;
+      case 'Unisex Fleece French Terry Crew': return <Delta97100 color={color.value ?? 'white'} image={image !== '' ? image : defaultImage}/>;
+      case 'Unisex Softstyle V-neck T-shirt': return <Gildan64v00 color={color.value ?? 'white'} image={image !== '' ? image : defaultImage}/>
+    }
+  }
+
   return (
     <>
       <div className="feature-content" style={{padding: '0px 10px'}}>
@@ -37,7 +47,7 @@ const CreateShirt: React.FC = () => {
     >
       <div className="create-shirt-svg-container">
         {/* @ts-ignore */}
-        <Gildan64000 color={color.value ?? 'white'} image={image !== '' ? image : defaultImage}/>
+        {getShirtStyle()}
       </div>
 
       <div className="cover-side-options">

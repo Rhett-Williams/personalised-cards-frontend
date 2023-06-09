@@ -22,6 +22,10 @@ export const options = [
 
 export const colorOptions = [
     {
+      "label": "Azalea",
+      "value": "#3C4D2F"
+    },
+    {
       "label": "Army",
       "value": "#3C4D2F"
     },
@@ -105,8 +109,9 @@ export const sizeOptions = [
   ]
 
   export const shirtSyles = [
-    'Unisex Softstyle T-Shirt, Gildan 64000',
-    'V neck'
+    'Unisex Softstyle T-Shirt',
+    'Unisex Fleece French Terry Crew',
+    'Unisex Softstyle V-neck T-shirt'
   ]
 
   export const phoneOptions = [

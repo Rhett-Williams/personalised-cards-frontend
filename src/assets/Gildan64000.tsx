@@ -15,7 +15,7 @@ const Gildan64000 = ({color, image}: Props) => (
   >
       <defs>
           <pattern id="myPattern" patternUnits="userSpaceOnUse" width="1100" height="1100">
-              <image xlinkHref={image} width="1100" height="1100" style={{ transform: 'translate(280px, 190px) scale(0.8)' }} />
+              <image xlinkHref={image} width="1100" height="1100" style={{ transform: 'translate(350px, 240px) scale(0.73)' }} />
           </pattern>
       </defs>
     <path
