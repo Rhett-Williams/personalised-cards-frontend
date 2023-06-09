@@ -25,7 +25,7 @@ const CreatePhoneCase: React.FC = () => {
   return (
     <>
       <div className="feature-content" style={{padding: '0px 10px'}}>
-        <h3 style={{textAlign: 'center'}}>{phone.label} Tough Case in Gloss</h3>
+        <h3 style={{textAlign: 'center'}}>{phone.label} Tough Case in {finish}</h3>
         <p style={{textAlign: 'center'}}>
         Protect your phone in style with our cutting-edge AI-generated phone cases, blending innovation and design for the perfect accessory.</p>
       </div>
@@ -34,9 +34,9 @@ const CreatePhoneCase: React.FC = () => {
       style={{marginBottom: 70}}
       onAnimationEnd={() => setIsVisible(false)}
     >
-      <div style={{height: 500, width: 100}}>
+      <div style={{height: 500, width: 350, overflow: 'hidden'}}>
         {/* @ts-ignore */}
-        <div style={{transform: 'translate(-210px, 0px)'}}>
+        <div style={{transform: 'translate(-90px, 0px)'}}>
         <PhoneUtil onLoad={() => setIsGenerateCoverImageLoading(false)} image={image !== '' ? image : defaultImage} label={phone.label}/>
         </div>
 
