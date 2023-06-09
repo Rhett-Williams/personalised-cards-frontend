@@ -102,7 +102,7 @@ const Inner: React.FC<Props> = ({
   return (
     <div
       className={`fade-in-right ${isVisible ? "visible" : "hidden"}`}
-      style={{marginBottom: 70}}
+      style={{marginBottom: 20}}
       onAnimationEnd={() => setIsVisible(false)}
     >
       <PictureOverlayInner

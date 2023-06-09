@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="1500" height="1500" shape-rendering="geometricPrecision">
+  <style>
+        .dottedLine { stroke: black; stroke-width: 1; stroke-dasharray: 1,2; vector-effect:non-scaling-stroke; }
+        .dashedLine { stroke: black; stroke-width: 1; stroke-dasharray: 5,5; vector-effect:non-scaling-stroke; }
+        .regularLine { stroke: black; stroke-width: 1; vector-effect:non-scaling-stroke;}
+        .thickLine { stroke: black; stroke-width: 2; vector-effect:non-scaling-stroke;}
+        .fillSemiWhite { fill: #FFF; fill-opacity:0.01; }
+        .fillTransparent { fill: none; }
+    </style>
+  <!-- SHADING -->
+  <!-- The transparent bg: everything around the outside of the garment -->
+  <path fill-rule="evenodd" class="fillSemiWhite" d="M0 0 H1500 V1500 H0 Z M438.2 242.8 H1061.8 V1014.4 H438.2 Z" fill="#FFF" fill-opacity="0.01" />
+  <!-- Garment colour: everything around the inside of the garment with the artwork aperture -->
+  <path d="M0 325 L310 188 L600 83 C650 70 850 70 900 83 L1190 188 L1500 383 L1375 583 L1150 558 V1350 H350 V558 L125 583     M438.2 242.8 H1061.8 V1014.4 H438.2 Z" fill-rule="evenodd" id="garmentColour" fill="#dc81a2" />
+  <!-- GARMENT OUTLINE -->
+  <path d="M0 325     L310 188     L600 83     C650 70 850 70 900 83     L1190 188     L1500 383     L1375 583     L1150 558     V1350     H350     V558     L125 583     Z" class="thickLine fillTransparent" stroke="black" stroke-width="2" vector-effect="non-scaling-stroke" fill="none" />
+  <!-- DOTTED APERTURE (397 x 490)-->
+  <rect x="438.2" y="242.8" width="623.6" height="771.6" id="innerRectangle" class="dottedLine" fill="#dc81a2" stroke="black" stroke-width="1" stroke-dasharray="1,2" vector-effect="non-scaling-stroke" />
+  <!-- DETAILS -->
+  <!-- Collar -->
+  <path d="M600 83  C650 200  850 200  900 83" class="regularLine fillTransparent" stroke="black" stroke-width="1" vector-effect="non-scaling-stroke" fill="none" />
+  <path d="M555 100 C625 250  875 250  945 100" class="regularLine fillTransparent" stroke="black" stroke-width="1" vector-effect="non-scaling-stroke" fill="none" />
+</svg>

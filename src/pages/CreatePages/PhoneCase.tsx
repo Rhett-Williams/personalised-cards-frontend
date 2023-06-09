@@ -6,13 +6,11 @@ import GenerateButton from '../../components/GenerateButton';
 import { phoneOptions } from '../../constants/Arrays';
 import PurchaseButton from '../../components/PurchaseButton';
 import PromptInputWithSurpriseMe from '../../components/PromptInputWithSurpriseMe';
-import Iphone14 from '../../assets/iphones/Iphone14';
 import PhoneUtil from '../../constants/PhoneUtil';
 
 const CreatePhoneCase: React.FC = () => {
   const [prompt, setPrompt] = useState("");
   const [image, setImage] = useState("");
-  const [backgroundSVG, setBackgroundSVG] = useState(iphone14pro)
   const [phone, setPhone] = useState<any>({ label: "iPhone 14 Pro", value: "GLOBAL-TECH-IP14PR-TCB-CS-G" });
   const [isGenerateCoverImageLoading, setIsGenerateCoverImageLoading] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
@@ -24,23 +22,13 @@ const CreatePhoneCase: React.FC = () => {
     };
   }, []);
 
-  function getImageByValue(value: string) {
-    for (const option of phoneOptions) {
-      if (option.label === value) {
-        return option.image;
-      }
-    }
-    return null; // Return null if no match is found
-  }
-
-  useEffect(() => {
-    const newImage = getImageByValue(phone.label)
-    if (!newImage) return
-    setBackgroundSVG(newImage)
-  },[phone.value])
-
   return (
     <>
+      <div className="feature-content" style={{padding: '0px 10px'}}>
+        <h3 style={{textAlign: 'center'}}>{phone.label} Tough Case in Gloss</h3>
+        <p style={{textAlign: 'center'}}>
+        Protect your phone in style with our cutting-edge AI-generated phone cases, blending innovation and design for the perfect accessory.</p>
+      </div>
     <div
       className={`fade-in-right ${isVisible ? "visible" : "hidden"}`}
       style={{marginBottom: 70}}
@@ -68,6 +56,12 @@ const CreatePhoneCase: React.FC = () => {
         <GenerateButton type='image' prompt={prompt} onGenerated={setImage} isGenerateLoading={isGenerateCoverImageLoading} setIsGenerateLoading={setIsGenerateCoverImageLoading}/>
       </div>
     </div>
+    <div style={{width: '50%', fontSize: 16, lineHeight: 0.5}}>
+        <p style={{textAlign: 'start', fontWeight: "bold"}}>About this item:</p>
+          <ul>
+            <li>Glossy asd asd asdas dad as</li>
+          </ul>
+      </div>
     <PurchaseButton
       title="Purchase your shirt!"
       payload={{

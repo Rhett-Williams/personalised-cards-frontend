@@ -93,6 +93,12 @@ const CreateCard: React.FC = () => {
   return (
     <
     >
+      <div className="feature-content" style={{padding: '0px 10px'}}>
+        <h3 style={{textAlign: 'center'}}>Gloss coated greetings card</h3>
+        <p style={{textAlign: 'center'}}>
+        Experience the future of birthday wishes with our AI-generated cards, crafted with precision and infused with heartfelt sentiments.</p>
+      </div>
+
       <div
         className="create-page-headers"
       >
@@ -118,6 +124,13 @@ const CreateCard: React.FC = () => {
         </div>
       </div>
       {renderStage()}
+      <div style={{width: '50%', fontSize: 16}}>
+        <p style={{textAlign: 'start', fontWeight: "bold"}}>About this item:</p>
+          <ul>
+            <li>Shipped from England and France world-wide</li>
+            <li>Delivered with a blank kraft envelope in a biodegradable OPP bag</li>
+          </ul>
+      </div>
           <PurchaseButton
             title="Purchase your card!"
             payload={{

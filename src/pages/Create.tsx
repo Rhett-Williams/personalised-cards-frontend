@@ -42,7 +42,7 @@ const Create: React.FC = () => {
                 image={option.image}
                 onClick={() => setSelectedOption(option.id)}
                 style={{
-                  animation: `fadeIn 1s ease-in-out forwards ${index * 500}ms`,
+                  animation: `fadeIn 1s ease-in-out forwards ${index * 200}ms`,
                 }}
               />
             );

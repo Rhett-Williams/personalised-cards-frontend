@@ -163,9 +163,9 @@ Experience the magic of AI-generated art where every design is a unique masterpi
         </div>
       </section>
         <div className="container-sm" style={{background: 'linear-gradient(to bottom, rgba(83,95,215,0), rgba(83,95,215,0.04))'}}>
-          <div className="cta-inner section-inner" style={{paddingBottom: 0}}>
+          <div className="cta-inner section-inner" style={{paddingBottom: 0, paddingTop: 20}}>
             <div className="cta-header text-center" style={{display: 'flex', alignItems: 'center', flexDirection: 'column'}}>
-              <h2 className="section-title mt-0" style={{marginBottom: 30}}>Inspiration:</h2>
+              <h2 className="section-title mt-0" style={{marginBottom: 10}}>Inspiration:</h2>
               <Carousel className='home-carousel'>
                   <div>
                       <img src={inspo1} />

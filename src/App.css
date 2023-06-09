@@ -577,7 +577,8 @@ img[src=""] {
 }
 
 .home-carousel {
-  width: 400px
+  width: 50%;
+  min-width: 450px;
 }
 
 @media(max-width: 1450px) {

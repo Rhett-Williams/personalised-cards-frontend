@@ -1,27 +1,6 @@
-import iphone14pro from '../assets/iphones/iphone14pro.svg'
-import iphone14promax from '../assets/iphones/iphone14promax.svg'
-import iphone14 from '../assets/iphones/iphone14.svg'
-import iphone14plus from '../assets/iphones/iphone14plus.svg'
-import iphone13pro from '../assets/iphones/iphone13pro.svg'
-import iphone13promax from '../assets/iphones/iphone13promax.svg'
-import iphone13 from '../assets/iphones/iphone13.svg'
-import iphone13mini from '../assets/iphones/iphone13mini.svg'
-import iphone12pro from '../assets/iphones/iphone12pro.svg'
-import iphone12promax from '../assets/iphones/iphone12promax.svg'
-import iphone12 from '../assets/iphones/iphone12.svg'
-import iphone12mini from '../assets/iphones/iphone12mini.svg'
-import iphonese2020 from '../assets/iphones/iphonese2020.svg'
-import iphone11pro from '../assets/iphones/iphone11pro.svg'
-import iphone11promax from '../assets/iphones/iphone11promax.svg'
-import iphone11 from '../assets/iphones/iphone11.svg'
-import iphonexr from '../assets/iphones/iphonexr.svg'
-import iphonexs from '../assets/iphones/iphonexs.svg'
-import iphonexsmax from '../assets/iphones/iphonexsmax.svg'
-import iphonex from '../assets/iphones/iphonex.svg'
 import giftCardImage from '../assets/giftcard.png'
 import phoneCaseImage from '../assets/phonecase.png'
 import tShirtImage from '../assets/t-shirt.png'
-import Iphone14 from '../assets/iphones/Iphone14'
 
 export const options = [
   {
@@ -125,106 +104,91 @@ export const sizeOptions = [
     '3XL'
   ]
 
+  export const shirtSyles = [
+    'Unisex Softstyle T-Shirt, Gildan 64000',
+    'V neck'
+  ]
+
   export const phoneOptions = [
     {
       label: "iPhone 14 Pro",
       value: "GLOBAL-TECH-IP14PR-TCB-CS-G",
-      // image: <Iphone14 backgroundImage={}/>
     },
     {
       label: "iPhone 14 Pro Max",
       value: "GLOBAL-TECH-IP14PM-TCB-CS-G",
-      image: iphone14promax
     },
     {
       label: "iPhone 14",
       value: "GLOBAL-TECH-IP14-TCB-CS-G",
-      image: iphone14
     },
     {
       label: "iPhone 14 Plus",
       value: "GLOBAL-TECH-IP14PL-TCB-CS-G",
-      image: iphone14plus
     },
     {
       label: "iPhone 13 Pro",
       value: "GLOBAL-TECH-IP13P-TCB-CS-G",
-      image: iphone13pro
     },
     {
       label: "iPhone 13 Pro Max",
       value: "GLOBAL-TECH-IP13PM-TCB-CS-G",
-      image: iphone13promax
     },
     {
       label: "iPhone 13",
       value: "GLOBAL-TECH-IP13-TCB-CS-G",
-      image: iphone13
     },
     {
       label: "iPhone 13 Mini",
       value: "GLOBAL-TECH-IP13MN-TCB-CS-G",
-      image: iphone13mini
     },
     {
       label: "iPhone 12 Pro",
       value: "GLOBAL-TECH-IP12P-TCB-CS-G",
-      image: iphone12pro
     },
     {
       label: "iPhone 12 Pro Max",
       value: "GLOBAL-TECH-IP12PM-TCB-CS-G",
-      image: iphone12promax
     },
     {
       label: "iPhone 12",
       value: "GLOBAL-TECH-IP12-TCB-CS-G",
-      image: iphone12
     },
     {
       label: "iPhone 12 Mini",
       value: "GLOBAL-TECH-IP12MN-TCB-CS-G",
-      image: iphone12mini
     },
     {
       label: "iPhone SE (2020)",
       value: "GLOBAL-TECH-IPSE-TCB-CS-G",
-      image: iphonese2020
     },
     {
       label: "iPhone 11 Pro",
       value: "GLOBAL-TECH-IP11P-TCB-CS-G",
-      image: iphone11pro
     },
     {
       label: "iPhone 11 Pro Max",
       value: "GLOBAL-TECH-IP11PM-TCB-CS-G",
-      image: iphone11promax
     },
     {
       label: "iPhone 11",
       value: "GLOBAL-TECH-IP11-TCB-CS-G",
-      image: iphone11
     },
     {
       label: "iPhone XR",
       value: "GLOBAL-TECH-IPXR-TCB-CS-G",
-      image: iphonexr
     },
     {
       label: "iPhone XS",
       value: "GLOBAL-TECH-IPXS-TCB-CS-G",
-      image: iphonexs
     },
     {
       label: "iPhone XS Max",
       value: "GLOBAL-TECH-IPXSM-TCB-CS-G",
-      image: iphonexsmax
     },
     {
       label: "iPhone X",
       value: "GLOBAL-TECH-IPX-TCB-CS-G",
-      image: iphonex
     }
   ]
 

@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import defaultImage from '../../assets/defaultImage.png';
-import TShirt from '../../assets/TShirt';
+import Gildan64000 from '../../assets/Gildan64000';
 import ReactDropdown from 'react-dropdown';
 import GenerateButton from '../../components/GenerateButton';
-import { colorOptions, sizeOptions } from '../../constants/Arrays';
+import { colorOptions, shirtSyles, sizeOptions } from '../../constants/Arrays';
 import PurchaseButton from '../../components/PurchaseButton';
 import PromptInputWithSurpriseMe from '../../components/PromptInputWithSurpriseMe';
 
@@ -12,6 +12,7 @@ const CreateShirt: React.FC = () => {
   const [image, setImage] = useState("");
   const [color, setColor] = useState<any>({label: "White", value: "#FFFFFF"});
   const [size, setSize] = useState('S')
+  const [style, setStyle] = useState('Unisex Softstyle T-Shirt, Gildan 64000')
   const [isGenerateCoverImageLoading, setIsGenerateCoverImageLoading] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
 
@@ -24,6 +25,11 @@ const CreateShirt: React.FC = () => {
 
   return (
     <>
+      <div className="feature-content" style={{padding: '0px 10px'}}>
+        <h3 style={{textAlign: 'center'}}>{style}</h3>
+        <p style={{textAlign: 'center'}}>
+        Express your unique style with our AI-generated t-shirts, where artistry and technology merge to create one-of-a-kind fashion statements.</p>
+      </div>
     <div
       className={`fade-in-right ${isVisible ? "visible" : "hidden"}`}
       style={{marginBottom: 70}}
@@ -31,18 +37,11 @@ const CreateShirt: React.FC = () => {
     >
       <div className="create-shirt-svg-container">
         {/* @ts-ignore */}
-        <TShirt color={color.value ?? 'white'}/>
-          <div className="shirt-generated-image-container">
-              <div className="shirt-generated-image-inner-div">
-                <img src={image} onLoad={() => setIsGenerateCoverImageLoading(false)} className="shirt-image" />
-                {image === '' && <img src={defaultImage} alt="Overlay Image" className="shirt-image" style={{opacity: 0.6}}/>}
-              </div>
-          </div>
-
+        <Gildan64000 color={color.value ?? 'white'} image={image !== '' ? image : defaultImage}/>
       </div>
 
       <div className="cover-side-options">
-        <div style={{fontWeight: 'bold', marginBottom: '15px'}}>Shirt colour:</div>
+        <div style={{fontWeight: 'bold', marginBottom: '15px'}}>Colour:</div>
         <section className="color-picker">
         <ReactDropdown
           className="dropdown"
@@ -53,7 +52,7 @@ const CreateShirt: React.FC = () => {
           placeholder="Select an option"
         />
         </section>
-        <div style={{fontWeight: 'bold', marginBottom: '15px'}}>Shirt Size:</div>
+        <div style={{fontWeight: 'bold', marginBottom: '15px'}}>Size:</div>
         <section className="color-picker">
         <ReactDropdown
           className="dropdown"
@@ -64,12 +63,29 @@ const CreateShirt: React.FC = () => {
           placeholder="Select an option"
         />
         </section>
+        <div style={{fontWeight: 'bold', marginBottom: '15px'}}>Style:</div>
+        <section className="color-picker">
+        <ReactDropdown
+          className="dropdown"
+          arrowClassName="dropdown-option"
+          options={shirtSyles}
+          onChange={(value) => setStyle(value.value)}
+          value={style}
+          placeholder="Select an option"
+        />
+        </section>
       </div>
       <div className="cover-form-container">
         <PromptInputWithSurpriseMe title='Image prompt:' prompt={prompt} setPrompt={setPrompt}/>
         <GenerateButton type='image' prompt={prompt} onGenerated={setImage} isGenerateLoading={isGenerateCoverImageLoading} setIsGenerateLoading={setIsGenerateCoverImageLoading}/>
       </div>
     </div>
+    <div style={{width: '50%', fontSize: 16, lineHeight: 0.5}}>
+        <p style={{textAlign: 'start', fontWeight: "bold"}}>About this item:</p>
+          <ul>
+            <li>Glossy asd asd asdas dad as</li>
+          </ul>
+      </div>
     <PurchaseButton
       title="Purchase your shirt!"
       payload={{
