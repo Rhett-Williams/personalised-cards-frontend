@@ -1,9 +1,8 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import defaultImage from '../../assets/defaultImage.png';
 import ReactDropdown from 'react-dropdown';
-import iphone14pro from '../../assets/iphones/iphone14pro.svg'
 import GenerateButton from '../../components/GenerateButton';
-import { phoneOptions } from '../../constants/Arrays';
+import { finishOptions, phoneOptions } from '../../constants/Arrays';
 import PurchaseButton from '../../components/PurchaseButton';
 import PromptInputWithSurpriseMe from '../../components/PromptInputWithSurpriseMe';
 import PhoneUtil from '../../constants/PhoneUtil';
@@ -11,7 +10,8 @@ import PhoneUtil from '../../constants/PhoneUtil';
 const CreatePhoneCase: React.FC = () => {
   const [prompt, setPrompt] = useState("");
   const [image, setImage] = useState("");
-  const [phone, setPhone] = useState<any>({ label: "iPhone 14 Pro", value: "GLOBAL-TECH-IP14PR-TCB-CS-G" });
+  const [phone, setPhone] = useState<any>(phoneOptions[0]);
+  const [finish, setFinish] = useState(finishOptions[0])
   const [isGenerateCoverImageLoading, setIsGenerateCoverImageLoading] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
 
@@ -50,6 +50,17 @@ const CreatePhoneCase: React.FC = () => {
           placeholder="Select an option"
         />
         </section>
+        <div style={{fontWeight: 'bold', marginBottom: '15px'}}>Finish:</div>
+        <section className="color-picker">
+          <ReactDropdown
+            className="dropdown"
+            arrowClassName="dropdown-option"
+            options={finishOptions}
+            onChange={(value) => setFinish(value.value)}
+            value={finish}
+            placeholder="Select an option"
+          />
+        </section>
       </div>
       <div className="cover-form-container">
         <PromptInputWithSurpriseMe title='Image prompt:' prompt={prompt} setPrompt={setPrompt}/>
@@ -63,7 +74,7 @@ const CreatePhoneCase: React.FC = () => {
           </ul>
       </div>
     <PurchaseButton
-      title="Purchase your shirt!"
+      title="Purchase your phone case!"
       payload={{
         productType: 'PhoneCase',
         image,

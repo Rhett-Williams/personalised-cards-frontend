@@ -20,11 +20,28 @@ export const options = [
   },
 ]
 
-export const colorOptions = [
-    {
-      "label": "Azalea",
-      "value": "#3C4D2F"
-    },
+export const gildan64v00ColorOptions = [
+  { label: 'Black', value: '#000000' },
+  { label: 'Charcoal', value: '#36454F' },
+  { label: 'Dark Heather', value: '#616161' },
+  { label: 'Heather Purple', value: '#9B6BAA' },
+  { label: 'Irish Green', value: '#008000' },
+  { label: 'Navy', value: '#000080' },
+  { label: 'Purple', value: '#800080' },
+  { label: 'Red', value: '#FF0000' },
+  { label: 'Royal', value: '#4169E1' },
+  { label: 'Sport Grey', value: '#C0C0C0' },
+  { label: 'White', value: '#FFFFFF' }
+];
+
+export const delta971000ColorOptions = [
+  { label: 'Black', value: '#000000' },
+  { label: 'Charcoal Heather', value: '#36454F' },
+  { label: 'Denim Heather', value: '#4F6072' },
+  { label: 'Navy', value: '#000080' }
+];
+
+export const gildan6400ColorOptions = [
     {
       "label": "Army",
       "value": "#3C4D2F"
@@ -195,6 +212,11 @@ export const sizeOptions = [
       label: "iPhone X",
       value: "GLOBAL-TECH-IPX-TCB-CS-G",
     }
+  ]
+
+export const finishOptions = [
+    'Gloss',
+    'Matte'
   ]
 
   export const genderOptions = ["Boy", "Girl", "Wife & Husband", "Other"];

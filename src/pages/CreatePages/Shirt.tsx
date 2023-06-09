@@ -3,7 +3,7 @@ import defaultImage from '../../assets/defaultImage.png';
 import Gildan64000 from '../../assets/Gildan64000';
 import ReactDropdown from 'react-dropdown';
 import GenerateButton from '../../components/GenerateButton';
-import { colorOptions, shirtSyles, sizeOptions } from '../../constants/Arrays';
+import { delta971000ColorOptions, gildan6400ColorOptions, gildan64v00ColorOptions, shirtSyles, sizeOptions } from '../../constants/Arrays';
 import PurchaseButton from '../../components/PurchaseButton';
 import PromptInputWithSurpriseMe from '../../components/PromptInputWithSurpriseMe';
 import Delta97100 from '../../assets/Delta97100';
@@ -13,10 +13,12 @@ const CreateShirt: React.FC = () => {
   const [prompt, setPrompt] = useState("");
   const [image, setImage] = useState("");
   const [color, setColor] = useState<any>({label: "White", value: "#FFFFFF"});
+  const [colorOptions, setColorOptions] = useState(gildan6400ColorOptions)
   const [size, setSize] = useState('S')
-  const [style, setStyle] = useState('Unisex Softstyle T-Shirt, Gildan 64000')
+  const [style, setStyle] = useState('Unisex Softstyle T-Shirt')
   const [isGenerateCoverImageLoading, setIsGenerateCoverImageLoading] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
+  const [sizeArray, setSizeArray] = useState(sizeOptions)
 
   useEffect(() => {
     setIsVisible(true);
@@ -32,6 +34,26 @@ const CreateShirt: React.FC = () => {
       case 'Unisex Softstyle V-neck T-shirt': return <Gildan64v00 color={color.value ?? 'white'} image={image !== '' ? image : defaultImage}/>
     }
   }
+
+  const getColourOptions = () => {
+    switch(style){
+      case 'Unisex Softstyle T-Shirt': return gildan6400ColorOptions;
+      case 'Unisex Fleece French Terry Crew': return delta971000ColorOptions;
+      case 'Unisex Softstyle V-neck T-shirt': return gildan64v00ColorOptions
+    }
+  }
+
+  useEffect(() => {
+    let modifiedSizeOptions = [...sizeOptions];
+    if (style === 'Unisex Softstyle V-neck T-shirt'){
+      modifiedSizeOptions = modifiedSizeOptions.filter((size) => size !== '3XL');
+    }
+    setSizeArray(modifiedSizeOptions);
+    const colors = getColourOptions()
+    if(!colors) return
+    setColorOptions(colors)
+    setColor(colors[0])
+  },[style])
 
   return (
     <>
@@ -67,7 +89,7 @@ const CreateShirt: React.FC = () => {
         <ReactDropdown
           className="dropdown"
           arrowClassName="dropdown-option"
-          options={sizeOptions}
+          options={sizeArray}
           onChange={(value) => setSize(value.value)}
           value={size}
           placeholder="Select an option"
