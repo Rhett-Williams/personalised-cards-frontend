@@ -1,10 +1,11 @@
 import React from "react";
 
 type Props = {
-  backgroundImage: string;
-};
+  backgroundImage: string
+  onLoad: () => void
+}
 
-const Iphone14 = ({ backgroundImage }: Props) => {
+const Iphone14 = ({ backgroundImage, onLoad }: Props) => {
   return (
     <div style={{ transform: "scale(0.35)", height: 0, width: 0 }}>
       <svg
@@ -23,7 +24,7 @@ const Iphone14 = ({ backgroundImage }: Props) => {
             width="1500"
             height="1500"
           >
-            <image xlinkHref={backgroundImage} width="1500" height="1500" />
+            <image onLoad={onLoad} xlinkHref={backgroundImage} width="1500" height="1500" />
           </pattern>
         </defs>
         <g id="Layer_2">

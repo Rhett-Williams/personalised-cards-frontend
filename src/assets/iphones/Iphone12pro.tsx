@@ -1,10 +1,11 @@
 import React from "react";
 
 type Props = {
-  backgroundImage: string;
-};
+  backgroundImage: string
+  onLoad: () => void
+}
 
-const Iphone12pro = ({ backgroundImage }: Props) => {
+const Iphone12pro = ({ backgroundImage, onLoad }: Props) => {
   return (
     <div style={{ transform: "scale(0.35)", height: 0, width: 0 }}>
         <svg xmlns="http://www.w3.org/2000/svg" width="1500px" height="1500px" shape-rendering="geometricPrecision">
@@ -15,7 +16,7 @@ const Iphone12pro = ({ backgroundImage }: Props) => {
                 width="15000"
                 height="15000"
             >
-                <image xlinkHref={backgroundImage} width="15000" height="15000" style={{ transform: 'translate(750px, 15000px) scale(1, -1)' }}/>
+                <image onLoad={onLoad} xlinkHref={backgroundImage} width="15000" height="15000" style={{ transform: 'translate(750px, 15000px) scale(1, -1)' }}/>
             </pattern>
             </defs>
             <g transform="translate(0.000000,1500.000000) scale(0.100000,-0.100000)">
