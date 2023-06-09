@@ -29,9 +29,9 @@ const CreateShirt: React.FC = () => {
 
   const getShirtStyle = () => {
     switch(style){
-      case 'Unisex Softstyle T-Shirt': return <Gildan64000 color={color.value ?? 'white'} image={image !== '' ? image : defaultImage}/>;
-      case 'Unisex Fleece French Terry Crew': return <Delta97100 color={color.value ?? 'white'} image={image !== '' ? image : defaultImage}/>;
-      case 'Unisex Softstyle V-neck T-shirt': return <Gildan64v00 color={color.value ?? 'white'} image={image !== '' ? image : defaultImage}/>
+      case 'Unisex Softstyle T-Shirt': return <Gildan64000 onLoad={() => setIsGenerateCoverImageLoading(false)} color={color.value ?? 'white'} image={image !== '' ? image : defaultImage}/>;
+      case 'Unisex Fleece French Terry Crew': return <Delta97100 onLoad={() => setIsGenerateCoverImageLoading(false)} color={color.value ?? 'white'} image={image !== '' ? image : defaultImage}/>;
+      case 'Unisex Softstyle V-neck T-shirt': return <Gildan64v00 onLoad={() => setIsGenerateCoverImageLoading(false)} color={color.value ?? 'white'} image={image !== '' ? image : defaultImage}/>
     }
   }
 
