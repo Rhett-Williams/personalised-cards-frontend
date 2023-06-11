@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
 import Home from './pages/Home';
 import Create from './pages/Create';
@@ -13,9 +13,17 @@ import './App.css'
 import Footer from './components/Footer';
 import 'mdb-react-ui-kit/dist/css/mdb.min.css';
 import "@fortawesome/fontawesome-free/css/all.min.css";
+import axios from 'axios';
 
 
 const App: React.FC = () => {
+
+  const wakeupJeff = async () => {
+    axios.post(`${process.env.REACT_APP_API_URL}wakeupJeff`);
+  }
+  useEffect(() => {
+    wakeupJeff()
+  },[])
 
   return (
       <Router>
