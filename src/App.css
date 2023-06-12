@@ -561,7 +561,6 @@ img[src=""] {
 .side-image-removing {
   position: absolute;
   right: 0;
-  transform: scaleX(-1);
 }
 
 .image-overlay {

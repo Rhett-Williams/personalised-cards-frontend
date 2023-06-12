@@ -91,7 +91,7 @@ const Create: React.FC = () => {
           zIndex: -1,
         }}
       >
-        <img style={{ objectFit: "revert" }} src={Side} />
+        <img style={{ objectFit: "revert", transform: 'scaleX(-1)'}} src={Side} />
       </div>
 
       <img className="side-image-removing" src={Side} />
