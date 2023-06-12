@@ -19,7 +19,13 @@ import axios from 'axios';
 const App: React.FC = () => {
 
   const wakeupJeff = async () => {
-    axios.get(`${process.env.REACT_APP_API_URL}wakeupJeff`);
+    try {
+      await axios.get(`${process.env.REACT_APP_API_URL}wakeupJeff`);
+      console.log("awake")
+    } catch (error) {
+      console.log("error", error)
+    }
+
   }
   useEffect(() => {
     wakeupJeff()

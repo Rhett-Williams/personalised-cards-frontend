@@ -1,7 +1,6 @@
 import React from 'react';
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import '../style.css'
-import Logo from "../assets/Logo.png"
 import HeaderIllustration from "../assets/switchImages/header-illustration-light.svg"
 import HeroMediaIllustration from "../assets/switchImages/hero-media-illustration-light.svg"
 import HeroMedia from "../assets/switchImages/hero-media-light.svg"
@@ -16,6 +15,8 @@ import inspo1 from '../assets/Inspo1.png'
 import inspo2 from '../assets/Inspo2.png'
 import inspo3 from '../assets/Inspo3.png'
 import inspo4 from '../assets/Inspo4.png'
+import HomeImage1 from '../assets/switchImages/HomeImage1';
+import HomeImage2 from '../assets/switchImages/HomeImage2';
 
 const Home: React.FC = () => {
   return (
@@ -62,20 +63,24 @@ const Home: React.FC = () => {
                   alt="Header illustration"
                 />
               </div>
+              
               <div className="hero-media-illustration">
                 <img
                   className="hero-media-illustration-image"
                   src={HeroMediaIllustration}
                   alt="Hero media illustration"
                 />
+
                 
               </div>
               <div className="hero-media-container">
-                <img
+                {/* <div>gammin</div> */}
+                {/* <img
                   className="hero-media-image"
                   src={HeroMedia}
                   alt="Hero media"
-                />
+                /> */}
+                <HomeImage1/>
               </div>
             </div>
           </div>
@@ -96,11 +101,7 @@ const Home: React.FC = () => {
                     src={FeatureIllustration}
                     alt="Feature illustration"
                   />
-                  <img
-                    className="features-box"
-                    src={FeatureBox}
-                    alt="Feature box"
-                  />
+                  <HomeImage2/>
                   <img
                     className="features-illustration"
                     src={FeatureIllustrationTop}
