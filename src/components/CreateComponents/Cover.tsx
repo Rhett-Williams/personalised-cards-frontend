@@ -44,7 +44,7 @@ const Cover: React.FC<Props> = ({
       onAnimationEnd={() => setIsVisible(false)}
     >
 
-      <PictureOverlay image={coverImage} backgroundColor={coverColor} onLoad={onLoad}/>
+      <PictureOverlay image={coverImage} backgroundColor={coverColor} onLoad={onLoad} isLoading={isGenerateImageLoading}/>
       <div className="cover-form-container">
         <PromptInputWithSurpriseMe title="Image prompt:" prompt={prompt} setPrompt={setPrompt}/>
         <GenerateButton type='image' prompt={prompt} onGenerated={onSetCoverImage} isGenerateLoading={isGenerateImageLoading} setIsGenerateLoading={setIsGenerateImageLoading}/>

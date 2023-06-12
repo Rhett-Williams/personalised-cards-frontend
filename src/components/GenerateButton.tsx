@@ -12,10 +12,15 @@ type Props = {
 const GenerateButton = ({ prompt, onGenerated, isGenerateLoading, setIsGenerateLoading, type }: Props) => {
 
   const onGenerate = async () => {
+    window.scrollTo({
+      top: 250,
+      behavior: 'smooth',
+    });
     switch(type){
       case 'image': generateImage(); break;
       case 'poem': generatePoem(); break
     }
+
   };
 
   const generateImage = async() => {

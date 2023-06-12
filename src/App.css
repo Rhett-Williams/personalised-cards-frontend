@@ -558,6 +558,26 @@ img[src=""] {
   border-top: #ff913a solid 3px;
 }
 
+.card-loading-indicator {
+  z-index: 500;
+  position: absolute;
+  width: 400px;
+  align-items: center; 
+  justify-content: center;
+  display: flex;
+  height: 600px
+}
+
+.phone-loading-indicator {
+  z-index: 500;
+  position: absolute;
+  width: 530px;
+  align-items: center; 
+  justify-content: center;
+  display: flex;
+  height: 600px
+}
+
 .side-image-removing {
   position: absolute;
   right: 0;
@@ -703,6 +723,11 @@ img[src=""] {
     right: 0px;
     padding-left: 20px;
     border-radius: 0px 0px 0px 20px;
+  }
+
+  .card-loading-indicator{
+    width: 200px;
+    height: 250px;
   }
 
   .side-image-removing {

@@ -8,6 +8,7 @@ import PurchaseButton from '../../components/PurchaseButton';
 import PromptInputWithSurpriseMe from '../../components/PromptInputWithSurpriseMe';
 import Delta97100 from '../../assets/Delta97100';
 import Gildan64v00 from '../../assets/Gildan64v00';
+import { ThreeDots } from 'react-loader-spinner';
 
 const CreateShirt: React.FC = () => {
   const [prompt, setPrompt] = useState("");
@@ -69,11 +70,22 @@ const CreateShirt: React.FC = () => {
     >
       <div className="create-shirt-svg-container">
         {/* @ts-ignore */}
+        {isGenerateCoverImageLoading && (
+        <div className="phone-loading-indicator">
+          <ThreeDots
+            height="50"
+            width="200"
+            color="orange"
+            ariaLabel="three-dots-loading"
+            visible={true}
+          />
+        </div>
+      )}
         {getShirtStyle()}
       </div>
 
       <div className="cover-side-options">
-        <div style={{fontWeight: 'bold', marginBottom: '15px', backgroundColor: 'white', padding: 5, borderRadius: 10}}>Colour:</div>
+        <div style={{fontWeight: 'bold', marginBottom: '15px', backgroundColor: 'white', padding: 5, borderRadius: 10}}>Colour: {color.value}</div>
         <section className="color-picker">
         <ReactDropdown
           className="dropdown"
@@ -82,6 +94,8 @@ const CreateShirt: React.FC = () => {
           onChange={(value) => setColor(value)}
           value={color.value}
           placeholder="Select an option"
+          arrowClosed={<div style={{position: 'absolute', top: 5, right: 10, color: 'orange'}}>v</div>}
+          arrowOpen={<div style={{position: 'absolute', top: 5, right: 10, color: 'orange'}}>^</div>}
         />
         </section>
         <div style={{fontWeight: 'bold', marginBottom: '15px', backgroundColor: 'white', padding: 5, borderRadius: 10}}>Size:</div>

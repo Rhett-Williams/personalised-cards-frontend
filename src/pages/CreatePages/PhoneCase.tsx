@@ -37,7 +37,7 @@ const CreatePhoneCase: React.FC = () => {
       <div style={{height: 500, width: 350, overflow: 'hidden'}}>
         {/* @ts-ignore */}
         <div style={{transform: 'translate(-90px, 0px)'}}>
-        <PhoneUtil onLoad={() => setIsGenerateCoverImageLoading(false)} image={image !== '' ? image : defaultImage} label={phone.label}/>
+        <PhoneUtil isLoading={isGenerateCoverImageLoading} onLoad={() => setIsGenerateCoverImageLoading(false)} image={image !== '' ? image : defaultImage} label={phone.label}/>
         </div>
 
       </div>
