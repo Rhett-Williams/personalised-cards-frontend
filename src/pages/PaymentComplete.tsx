@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import Error from "../components/PaymentCompleteComponents/Error";
 import OrderOnTheWay from "../components/PaymentCompleteComponents/OrderOnTheWay";
 import { BallTriangle } from "react-loader-spinner";
+import ReactGA from "react-ga4";
 
 const PaymentComplete: React.FC = () => {
   const { id } = useParams();
@@ -16,6 +17,7 @@ const PaymentComplete: React.FC = () => {
         paymentLinkId: routeId
       });
       if (!response.data.isValidPayment) throw Error;
+      ReactGA.send({ hitType: "paymentComplete", title: `payment: ${routeId}` });
       setIsError(false)
     } catch (error) {
       

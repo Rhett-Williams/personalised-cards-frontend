@@ -1,5 +1,6 @@
 import axios from "axios";
 import { ThreeDots } from "react-loader-spinner";
+import ReactGA from "react-ga4";
 
 type Props = {
   prompt: string;
@@ -12,6 +13,7 @@ type Props = {
 const GenerateButton = ({ prompt, onGenerated, isGenerateLoading, setIsGenerateLoading, type }: Props) => {
 
   const onGenerate = async () => {
+    ReactGA.send({ hitType: "generateClick", title: `Generate Button Clicked` });
     window.scrollTo({
       top: 250,
       behavior: 'smooth',

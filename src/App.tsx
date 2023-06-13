@@ -14,7 +14,7 @@ import Footer from './components/Footer';
 import 'mdb-react-ui-kit/dist/css/mdb.min.css';
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import axios from 'axios';
-
+import ReactGA from "react-ga4";
 
 const App: React.FC = () => {
 
@@ -29,6 +29,7 @@ const App: React.FC = () => {
   }
   useEffect(() => {
     wakeupJeff()
+    ReactGA.send({ hitType: "pageview", page: "/", title: "Home" });
   },[])
 
   return (

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import '../style.css'
 import HeaderIllustration from "../assets/switchImages/header-illustration-light.svg"
@@ -19,6 +19,7 @@ import HomeImage1 from '../assets/switchImages/HomeImage1';
 import HomeImage2 from '../assets/switchImages/HomeImage2';
 
 const Home: React.FC = () => {
+
   return (
       <>
   <meta charSet="utf-8" />
