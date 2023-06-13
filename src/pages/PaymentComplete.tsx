@@ -10,6 +10,7 @@ const PaymentComplete: React.FC = () => {
   const { id } = useParams();
   const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(true);
+  const [payload, setPayload] = useState()
 
   const validatePayment = async (routeId?: string) => {
     try {
@@ -22,6 +23,10 @@ const PaymentComplete: React.FC = () => {
         action: 'item purchased',
         label: routeId
       })
+      const payload = localStorage.getItem("itemDetails")
+      if(payload){
+        setPayload(JSON.parse(payload))
+      }
       setIsError(false)
     } catch (error) {
       
@@ -56,7 +61,7 @@ const PaymentComplete: React.FC = () => {
       ) : isError ? (
         <Error />
       ) : (
-        <OrderOnTheWay />
+        <OrderOnTheWay payload={payload} />
       )}
     </div>
   );

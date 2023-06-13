@@ -19,6 +19,7 @@ const PurchaseButton = ({ payload, title}: Props) => {
               setIsPurchaseLoading(false)
               return
             }
+            localStorage.setItem("itemDetails", JSON.stringify(payload))
             const response = await axios.post(`${process.env.REACT_APP_API_URL}createPaymentLink`, payload);
             const isSafariMobile = () => {
             const userAgent = navigator.userAgent.toLowerCase();

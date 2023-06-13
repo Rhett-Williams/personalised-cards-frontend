@@ -1,11 +1,16 @@
 import React, { useEffect, useState } from 'react';
 
-const OrderOnTheWay: React.FC = () => {
+type Props = {
+  payload?: any
+}
 
+const OrderOnTheWay: React.FC = ({payload}: Props) => {
 
   return (
     <div>
       <div>Order on the way?</div>
+      <div>{payload?.productType}</div>
+      <img src={payload?.image ?? payload?.coverImage}/>
     </div>
   );
 };
