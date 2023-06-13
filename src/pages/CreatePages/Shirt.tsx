@@ -126,10 +126,11 @@ const CreateShirt: React.FC = () => {
         <GenerateButton type='image' prompt={prompt} onGenerated={setImage} isGenerateLoading={isGenerateCoverImageLoading} setIsGenerateLoading={setIsGenerateCoverImageLoading}/>
       </div>
     </div>
-    <div style={{width: '50%', fontSize: 16, lineHeight: 0.5}}>
-        <p style={{textAlign: 'start', fontWeight: "bold"}}>About this item:</p>
+    <div style={{width: '50%', fontSize: 16}}>
+        <p style={{textAlign: 'start', fontWeight: "bold"}}>About these items:</p>
           <ul>
-            <li>Glossy asd asd asdas dad as</li>
+            <li>Shipped from Australia world-wide</li>
+            <li>Focus on sustainable and locally sourced materials</li>
           </ul>
       </div>
     <PurchaseButton
