@@ -27,6 +27,7 @@ const PaymentComplete: React.FC = () => {
       if(payload){
         setPayload(JSON.parse(payload))
       }
+      localStorage.removeItem("itemDetails");
       setIsError(false)
     } catch (error) {
       
