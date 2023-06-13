@@ -34,12 +34,12 @@ const App: React.FC = () => {
 
   return (
       <Router>
-        <Navbar />
-        <div style={{width: '100%', height: '6vh'}}/>
         <link
           href="https://fonts.googleapis.com/css?family=Heebo:400,700|IBM+Plex+Sans:600"
           rel="stylesheet"
         />
+        <Navbar />
+        <div style={{width: '100%', height: '6vh'}}/>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/create" element={<Create />} />
