@@ -17,7 +17,11 @@ const PaymentComplete: React.FC = () => {
         paymentLinkId: routeId
       });
       if (!response.data.isValidPayment) throw Error;
-      ReactGA.send({ hitType: "paymentComplete", title: `payment: ${routeId}` });
+      ReactGA.event({
+        category: 'conversion',
+        action: 'item purchased',
+        label: routeId
+      })
       setIsError(false)
     } catch (error) {
       

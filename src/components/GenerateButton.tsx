@@ -13,7 +13,6 @@ type Props = {
 const GenerateButton = ({ prompt, onGenerated, isGenerateLoading, setIsGenerateLoading, type }: Props) => {
 
   const onGenerate = async () => {
-    ReactGA.send({ hitType: "generateClick", title: `Generate Button Clicked` });
     window.scrollTo({
       top: 250,
       behavior: 'smooth',
@@ -26,6 +25,11 @@ const GenerateButton = ({ prompt, onGenerated, isGenerateLoading, setIsGenerateL
   };
 
   const generateImage = async() => {
+    ReactGA.event({
+      category: 'Generate Button',
+      action: 'Image Generated',
+      label: prompt
+    })
     setIsGenerateLoading(true);
     if (prompt === "") {
       alert("Please provide a prompt");

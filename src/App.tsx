@@ -25,8 +25,8 @@ const App: React.FC = () => {
     } catch (error) {
       console.log("error", error)
     }
-
   }
+
   useEffect(() => {
     wakeupJeff()
     ReactGA.send({ hitType: "pageview", page: "/", title: "Home" });
