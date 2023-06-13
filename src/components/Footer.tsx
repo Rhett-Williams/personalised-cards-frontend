@@ -63,6 +63,9 @@ const Footer = () => {
           <div className="footer-copyright">
             © 2023 Pixel Perfect Delights, all rights reserved
           </div>
+          <div className="footer-copyright">
+            We would love to hear your feedback or ideas for other items we can customise so get in touch at: enquiries@pixel-perfect-delights.com
+          </div>
         </div>
       </div>
     </footer>
