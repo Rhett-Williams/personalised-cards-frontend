@@ -10,7 +10,7 @@ const PaymentComplete: React.FC = () => {
   const { id } = useParams();
   const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(true);
-  const [payload, setPayload] = useState()
+  const [payload, setPayload] = useState(undefined)
 
   const validatePayment = async (routeId?: string) => {
     try {

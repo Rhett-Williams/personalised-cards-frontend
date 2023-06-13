@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 
 type Props = {
-  payload?: any
-}
+  payload: any;
+};
 
-const OrderOnTheWay: React.FC = ({payload}: Props) => {
+const OrderOnTheWay = ({ payload}: Props) => {
 
   return (
     <div>

@@ -26,10 +26,6 @@ const Home: React.FC = () => {
   <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Pixel Perfect Delights</title>
-  <link
-    href="https://fonts.googleapis.com/css?family=Heebo:400,700|IBM+Plex+Sans:600"
-    rel="stylesheet"
-  />
   <div className="body-wrap boxed-container">
     <header className="site-header">
       <div className="container">
