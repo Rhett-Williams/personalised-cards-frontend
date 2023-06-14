@@ -16,7 +16,7 @@ const Footer = () => {
           </div>
           <ul className="footer-links list-reset">
             <li>
-              <a href="#">About us</a>
+              <a href="/terms-and-conditions">T's & C's</a>
             </li>
             <li>
               <a href="/create">Get Started</a>
