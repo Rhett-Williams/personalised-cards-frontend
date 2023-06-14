@@ -15,8 +15,8 @@ const ImageResizer = ({ imageUrl, targetWidth, targetHeight }: any) => {
       const ctx = canvas?.getContext('2d');
 
       // Set the canvas dimensions to the target width and height
-      canvas?.width = targetWidth;
-      canvas?.height = targetHeight;
+      canvas.width = targetWidth;
+      canvas.height = targetHeight;
 
       // Draw the image on the canvas with the desired dimensions
       ctx?.drawImage(img, 0, 0, targetWidth, targetHeight);
