@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 
-const ImageResizer = ({ imageUrl, targetWidth, targetHeight }) => {
+const ImageResizer = ({ imageUrl, targetWidth, targetHeight }: any) => {
   const canvasRef = useRef(null);
 
   useEffect(() => {
