@@ -12,6 +12,7 @@ const ImageResizer = ({ imageUrl, targetWidth, targetHeight }: any) => {
       await img.decode(); // Wait for the image to load
 
       const canvas = canvasRef.current;
+            //@ts-ignore
       const ctx = canvas?.getContext('2d');
 
       // Set the canvas dimensions to the target width and height
