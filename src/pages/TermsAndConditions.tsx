@@ -9,6 +9,7 @@ import ReactGA from "react-ga4";
 const TermsAndConditions: React.FC = () => {
 
   return (
+    <div style={{width: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
     <div
       style={{maxWidth: 1000}}
     >
@@ -132,6 +133,7 @@ const TermsAndConditions: React.FC = () => {
 
 <p>As long as the website and the information and services on the website are provided free of charge, we will not be liable for any loss or damage of any nature.</p>
     </div>
+      </div>
   );
 };
 
