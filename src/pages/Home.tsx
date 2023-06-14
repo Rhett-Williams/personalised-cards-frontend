@@ -42,7 +42,7 @@ const Home: React.FC = () => {
         <div className="container">
           <div className="hero-inner">
             <div className="hero-copy">
-              <h1 className="hero-title mt-0">Welcome to Pixel Perfect Delights!</h1>
+              <h1 className="hero-title mt-0" style={{zIndex: 30}}>Welcome to Pixel Perfect Delights!</h1>
               <p className="hero-paragraph">
                 Indulge in the world of AI-generated images and let your imagination soar. Explore our online store and discover a universe of pixel perfect delights. Whether you're shopping for yourself or searching for a unique gift, our collection will ignite your senses and leave you craving for more.
               </p>
