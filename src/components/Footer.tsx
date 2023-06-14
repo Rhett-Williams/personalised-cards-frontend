@@ -16,10 +16,10 @@ const Footer = () => {
           </div>
           <ul className="footer-links list-reset">
             <li>
-              <a href="/terms-and-conditions">T's & C's</a>
+              <a href="/create">Get Started</a>
             </li>
             <li>
-              <a href="/create">Get Started</a>
+              <a href="/terms-and-conditions">T's & C's</a>
             </li>
             <li>
               <a href="#">Support</a>
