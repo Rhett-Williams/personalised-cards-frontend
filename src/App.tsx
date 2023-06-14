@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-d
 import Home from './pages/Home';
 import Create from './pages/Create';
 import PaymentComplete from './pages/PaymentComplete';
+import TermsAndConditions from './pages/TermsAndConditions';
 import Navbar from './components/NavBar';
 import './fonts/Sarah-Script-Font.ttf'
 import './fonts/Roboto-Regular.ttf'
@@ -44,6 +45,7 @@ const App: React.FC = () => {
           <Route path="/" element={<Home />} />
           <Route path="/create" element={<Create />} />
           <Route path="/payment-complete/:id" element={<PaymentComplete />} />
+          <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
         </Routes>
         <Footer/>
       </Router>
