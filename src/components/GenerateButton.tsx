@@ -1,7 +1,6 @@
 import axios from "axios";
 import { ThreeDots } from "react-loader-spinner";
 import ReactGA from "react-ga4";
-import ImageResizer from "../ImageResizer";
 
 type Props = {
   prompt: string;
@@ -43,8 +42,7 @@ const GenerateButton = ({ prompt, onGenerated, isGenerateLoading, setIsGenerateL
         { prompt }
       );
       const { imageUrl } = response.data;
-      const resizedImage = ImageResizer({ imageUrl, targetWidth: 300, targetHeight: 300 })
-      onGenerated(resizedImage as unknown as string);
+      onGenerated(imageUrl);
     } catch (error) {
       console.error("Error fetching image prompt:", error);
       alert("Error getting image.");
