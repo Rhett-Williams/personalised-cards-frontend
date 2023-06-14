@@ -40,7 +40,7 @@ const App: React.FC = () => {
           rel="stylesheet"
         />
         <Navbar />
-        <div style={{width: '100%', height: '6vh'}}/>
+        <div style={{width: '100%', height: '6vh', minHeight: 70}}/>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/create" element={<Create />} />
