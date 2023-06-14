@@ -1,7 +1,8 @@
 import axios from "axios";
 import { ThreeDots } from "react-loader-spinner";
 import ReactGA from "react-ga4";
-import ImageResizer from "../ImageResizer
+import ImageResizer from "../ImageResizer;
+
 type Props = {
   prompt: string;
   onGenerated: (url: string) => void;
