@@ -44,7 +44,7 @@ const GenerateButton = ({ prompt, onGenerated, isGenerateLoading, setIsGenerateL
       );
       const { imageUrl } = response.data;
       const resizedImage = ImageResizer({ imageUrl, targetWidth: 300, targetHeight: 300 })
-      onGenerated(resizedImage as string);
+      onGenerated(resizedImage as unknown as string);
     } catch (error) {
       console.error("Error fetching image prompt:", error);
       alert("Error getting image.");
