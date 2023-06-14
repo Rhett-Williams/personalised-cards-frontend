@@ -10,6 +10,7 @@ const TermsAndConditions: React.FC = () => {
 
   return (
     <div
+      style={{maxWidth: 1000}}
     >
 <h2><strong>Terms and Conditions</strong></h2>
 
