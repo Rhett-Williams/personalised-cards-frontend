@@ -22,7 +22,7 @@ const Footer = () => {
               <a href="/terms-and-conditions">T's & C's</a>
             </li>
             <li>
-              <a href="#">Support</a>
+              <a href="mailto: enquiries@pixel-perfect-delights.com">Support</a>
             </li>
           </ul>
           <ul className="footer-social-links list-reset">
