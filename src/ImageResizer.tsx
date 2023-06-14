@@ -22,6 +22,7 @@ const ImageResizer = ({ imageUrl, targetWidth, targetHeight }: any) => {
       ctx?.drawImage(img, 0, 0, targetWidth, targetHeight);
 
       // Get the resized image as a data URL
+      //@ts-ignore
       const resizedImageUrl = canvas?.toDataURL();
 
       // Do something with the resized image URL (e.g., display or download)
