@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import '../style.css'
 import HeaderIllustration from "../assets/switchImages/header-illustration-light.svg"
@@ -17,16 +17,18 @@ import inspo3 from '../assets/Inspo3.png'
 import inspo4 from '../assets/Inspo4.png'
 import HomeImage1 from '../assets/switchImages/HomeImage1';
 import HomeImage2 from '../assets/switchImages/HomeImage2';
+import { IParallax, Parallax, ParallaxLayer } from '@react-spring/parallax';
+import Navbar from '../components/NavBar';
 
 const Home: React.FC = () => {
 
   return (
-      <>
-  <meta charSet="utf-8" />
+    <>
+<meta charSet="utf-8" />
   <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Pixel Perfect Delights</title>
-  <div className="body-wrap boxed-container">
+  <div className="body-wrap boxed-container" style={{background: 'none'}}>
     <header className="site-header">
       <div className="container">
         <div className="site-header-inner">
@@ -204,7 +206,7 @@ Experience the magic of AI-generated art where every design is a unique masterpi
       </section>
     </main>
   </div>
-</>
+  </>
   );
 };
 
